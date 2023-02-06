@@ -11,9 +11,9 @@ class UpdateAdvisoryboard extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +21,12 @@ class UpdateAdvisoryboard extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            'description_ru' => 'required',
+            'description_uz' => 'required',
+            'description_en' => 'required',
         ];
     }
 }

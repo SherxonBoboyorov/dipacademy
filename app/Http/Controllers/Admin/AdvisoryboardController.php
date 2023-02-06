@@ -39,7 +39,12 @@ class AdvisoryboardController extends Controller
      */
     public function store(CreateAdvisoryboard $request)
     {
-        //
+        $data = $request->all();
+
+         if(Advisoryboard::create($data)) {
+             return redirect()->route('advisoryboard.index')->with('message', "Advisory Board created successfully");
+        }
+        return redirect()->route('advisoryboard.index')->with('message', "Unable to create Advisory Board");
     }
 
     /**
@@ -61,7 +66,8 @@ class AdvisoryboardController extends Controller
      */
     public function edit($id)
     {
-        //
+        $advisoryboard = Advisoryboard::find($id);
+        return view('admin.advisoryboard.edit', compact('advisoryboard'));
     }
 
     /**
@@ -73,7 +79,16 @@ class AdvisoryboardController extends Controller
      */
     public function update(UpdateAdvisoryboard $request, $id)
     {
-        //
+        $advisoryboard = Advisoryboard::find($id);
+
+        $data = $request->all();
+
+        if ($advisoryboard->update($data)) {
+            return redirect()->route('advisoryboard.index')->with('message', 'Advisory Board changed successfully!!!');
+        }
+
+        return redirect()->route('advisoryboard.index')->with('message', 'Unable to update Advisory Board!!!');
+
     }
 
     /**
@@ -84,6 +99,11 @@ class AdvisoryboardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $advisoryboard = Advisoryboard::find($id);
+
+        if ($advisoryboard->delete()) {
+            return redirect()->route('advisoryboard.index')->with('message', "Advisory Board deleted successfully");
+        }
+        return redirect()->route('advisoryboard.index')->with('message', "unable to delete Advisory Board");
     }
 }

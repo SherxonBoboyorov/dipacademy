@@ -50,7 +50,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('slider.create') }}" class="nav-link">
-                               <p>Add</p>
+                               <p>Create</p>
                             </a>
                         </li>
                         </ul>
@@ -86,7 +86,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('page.create') }}" class="nav-link">
-                                   <p>Add</p>
+                                   <p>Create</p>
                                 </a>
                             </li>
                             </ul>
@@ -94,6 +94,80 @@
                         </ul>
                      </li>
                     {{-- end --}}
+
+                     {{-- start--}}
+                     <li class="nav-item">
+                        <a href="#" class="nav-link">
+                        <i class="nav-icon"></i>
+                        <p>
+                             Advisory Board
+                             <i class="right fas fa-angle-left"></i>
+                        </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('advisoryboard.index') }}" class="nav-link">
+                               <p>List</p>
+                            </a>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a href="{{ route('advisoryboard.create') }}" class="nav-link">
+                               <p>Add</p>
+                            </a>
+                        </li> --}}
+                        </ul>
+                     </li>
+                     {{-- end --}}
+
+                       {{-- start--}}
+                       <li class="nav-item">
+                        <a href="#" class="nav-link">
+                        <i class="nav-icon"></i>
+                        <p>
+                             Leadership
+                             <i class="right fas fa-angle-left"></i>
+                        </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('leadership.index') }}" class="nav-link">
+                               <p>List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('leadership.create') }}" class="nav-link">
+                               <p>Create</p>
+                            </a>
+                        </li>
+                        </ul>
+                     </li>
+                     {{-- end --}}
+                     
+
+                     {{-- start--}}
+
+                     <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon"></i>
+                            <p>
+                                Norms & Statements
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('statement.index') }}" class="nav-link">
+                                   <p>List</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('statement.create') }}" class="nav-link">
+                                   <p>Create</p>
+                                </a>
+                            </li>
+                            </ul>
+
+                     </li>
+                     {{-- end--}}
 
                 </ul>
             </nav>
