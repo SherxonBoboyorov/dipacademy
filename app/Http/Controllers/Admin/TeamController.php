@@ -42,10 +42,10 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  App\Http\Requests\Admin\CreateTaam  $request
+     * @param  App\Http\Requests\Admin\CreateTeam  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateTaam $request)
+    public function store(CreateTeam $request)
     {
         $data = $request->all();
 

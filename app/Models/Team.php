@@ -18,6 +18,9 @@ class Team extends Model
         'name_ru',
         'name_uz',
         'name_en',
+        'slug_ru',
+        'slug_uz',
+        'slug_en',
         'job_title_ru',
         'job_title_uz',
         'job_title_en',
@@ -29,7 +32,18 @@ class Team extends Model
         'description_ru',
         'description_uz',
         'description_en',
+        'meta_title_ru',
+        'meta_title_uz',
+        'meta_title_en',
+        'meta_description_ru',
+        'meta_description_ru',
+        'meta_description_ru'
     ];
+
+    public function department()
+    {
+        return $this->belongsTo('App\Models\Department', 'department_id');
+    }
 
     public static function uploadImage($request): ?string
     {
