@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\AdvisoryboardController;
 use App\Http\Controllers\Admin\LeadershipController;
 use App\Http\Controllers\Admin\StatementController;
+use App\Http\Controllers\Admin\DepartmentController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -24,7 +25,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
          'page' => PageController::class,
          'advisoryboard' => AdvisoryboardController::class,
          'leadership' => LeadershipController::class,
-         'statement' => StatementController::class
+         'statement' => StatementController::class,
+         'department' => DepartmentController::class
     ]);
 });
 

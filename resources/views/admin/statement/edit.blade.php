@@ -63,6 +63,8 @@
                             <div class="col-md-6">
                                 <label for="image">Document</label>
                                 <input type="file" name="image" class="form-control-file">
+
+
                                 @if($errors->has('image'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -72,8 +74,8 @@
                                     </div>
                                 @endif
                             </div>
-                            <div class="col-md-6">
-                                <h2>{{ asset($statement->image) }}</h2>
+                            <div class="col-md-8">
+                                {{ asset($statement->image) }}
                             </div>
                         </div><br>
 

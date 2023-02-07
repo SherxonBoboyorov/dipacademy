@@ -100,7 +100,7 @@ class PageController extends Controller
         $data['slug_en'] = Str::slug($request->title_en, '-', 'en');
 
         if ($page->update($data)) {
-            return redirect()->route('page.index')->with('message', "pchanged successfully");
+            return redirect()->route('page.index')->with('message', "changed successfully");
         }
         return redirect()->route('page.index')->with('message', "Unable to update");
     }
