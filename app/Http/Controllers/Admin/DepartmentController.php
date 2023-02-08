@@ -86,7 +86,7 @@ class DepartmentController extends Controller
     public function update(UpdateDepartment $request, $id)
     {
         if (!Department::find($id)) {
-            return redirect()->route('department.index')->with('message', "Departments & Staffnot fount");
+            return redirect()->route('department.index')->with('message', "Departments & Staff not fount");
         }
 
         $department = Department::find($id);
@@ -100,7 +100,7 @@ class DepartmentController extends Controller
         if ($department->update($data)) {
             return redirect()->route('department.index')->with('message', "Departments & Staff changed successfully");
         }
-        return redirect()->route('padepartmentge.index')->with('message', "Unable to update Departments & Staff");
+        return redirect()->route('department.index')->with('message', "Unable to update Departments & Staff");
     }
 
     /**

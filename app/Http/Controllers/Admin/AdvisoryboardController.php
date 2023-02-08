@@ -88,7 +88,6 @@ class AdvisoryboardController extends Controller
         }
 
         return redirect()->route('advisoryboard.index')->with('message', 'Unable to update Advisory Board!!!');
-
     }
 
     /**

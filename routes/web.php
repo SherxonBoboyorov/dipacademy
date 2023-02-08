@@ -11,8 +11,8 @@ use App\Http\Controllers\Admin\LeadershipController;
 use App\Http\Controllers\Admin\StatementController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\FacultyController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
-
 
 
 Auth::routes();
@@ -28,11 +28,10 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
          'leadership' => LeadershipController::class,
          'statement' => StatementController::class,
          'department' => DepartmentController::class,
-         'team' => TeamController::class
+         'team' => TeamController::class,
+         'faculty' => FacultyController::class
     ]);
 });
-
-
 
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
