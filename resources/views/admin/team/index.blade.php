@@ -33,6 +33,7 @@
                         <tr>
                             <th style="width: 2%;">#</th>
                             <th>Image</th>
+                            <th>Departments & Staff</th>
                             <th>Name [Uzbek]</th>
                             <th>Name [Russian]</th>
                             <th>Name [English]</th>
@@ -46,6 +47,7 @@
                                 <td>
                                     <img src="{{ asset($team->image) }}" alt="" width="35" height="35">
                                 </td>
+                                <td>{{ $team->department->title_en ?? "" }}</td>
                                 <td>{{ $team->name_uz }}</td>
                                 <td>{{ $team->name_ru }}</td>
                                 <td>{{ $team->name_en }}</td>

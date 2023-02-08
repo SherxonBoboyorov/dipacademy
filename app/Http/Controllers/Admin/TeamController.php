@@ -80,7 +80,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        $department = Department::orderBy('created_at', 'DECS')->get();
+        $department = Department::orderBy('created_at', 'DESC')->get();
         return view('admin.team.edit', [
             'department' => $department,
             'team' => $team

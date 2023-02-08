@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-3">
-                            <label>Centers  </label>
+                            <label>Departments & Staff</label>
                             <select name="department_id" id="department_id" class="form-control">
                                 @foreach ($departments as $department)
                                     <option value="{{ $department->id }}">{{ $department->title_en }}</option>

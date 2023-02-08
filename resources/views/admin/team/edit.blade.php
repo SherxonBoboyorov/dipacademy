@@ -17,11 +17,12 @@
         <!-- end page title end breadcrumb -->
         <form action="{{ route('team.update', $team->id) }}" enctype="multipart/form-data" method="POST">
             @csrf
+            @method('PUT')
             <div class="card">
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-3">
-                            <label for="department_id">Centers </label>
+                            <label for="department_id">Departments & Staff </label>
                             <select name="department_id" id="department_id" class="form-control">
                                 @foreach ($department as $department)
                                 <option @if($department->id == $team->department_id) selected @endif value="{{ $department->id }}">{{ $department->title_en }}</option>
@@ -331,7 +332,7 @@
                             @endif
                         </div>
                         <div class="col-md-6">
-                            <img src="{{ asset($slider->image) }}" width="150" height="150" alt="">
+                            <img src="{{ asset($team->image) }}" width="150" height="150" alt="">
                         </div>
                     </div>
                     <div class="row" style="margin-top: 15px">
