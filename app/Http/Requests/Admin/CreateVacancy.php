@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreatePhoto extends FormRequest
+class CreateVacancy extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,12 @@ class CreatePhoto extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => 'required|image|mimes:jpeg,png,jpg,webp',
             'title_ru' => 'required|max:255',
             'title_uz' => 'required|max:255',
             'title_en' => 'required|max:255',
+            'description_ru' => 'required',
+            'description_uz' => 'required',
+            'description_en' => 'required',
         ];
     }
 }

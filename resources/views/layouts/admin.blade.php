@@ -244,6 +244,80 @@
                       </li>
                      {{-- end--}}
 
+                        {{-- start--}}
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    Photo gallery
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('photo.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('photo.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li>
+                                </ul>
+                          </li>
+                         {{-- end--}}
+
+
+                          {{-- start--}}
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    Video gallery
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('video.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('video.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li>
+                                </ul>
+                          </li>
+                         {{-- end--}}
+
+
+                          {{-- start--}}
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    Job vacancies
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('vacancy.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('vacancy.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li>
+                                </ul>
+                          </li>
+                         {{-- end--}}
+
 
                 </ul>
             </nav>

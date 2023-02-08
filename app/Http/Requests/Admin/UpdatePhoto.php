@@ -24,7 +24,9 @@ class UpdatePhoto extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title_ru' => 'required|max:255',
+            'title_uz' => 'required|max:255',
+            'title_en' => 'required|max:255',
         ];
     }
 }

@@ -12,6 +12,9 @@ use App\Http\Controllers\Admin\StatementController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\FacultyController;
+use App\Http\Controllers\Admin\PhotoController;
+use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Admin\VacancyController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -29,8 +32,11 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
          'statement' => StatementController::class,
          'department' => DepartmentController::class,
          'team' => TeamController::class,
-         'faculty' => FacultyController::class
-    ]);
+         'faculty' => FacultyController::class,
+         'photo' => PhotoController::class,
+         'video' => VideoController::class,
+         'vacancy' => VacancyController::class
+     ]);
 });
 
 
