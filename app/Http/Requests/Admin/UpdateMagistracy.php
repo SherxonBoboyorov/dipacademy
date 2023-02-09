@@ -9,11 +9,12 @@ class UpdateMagistracy extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      *
+     * 
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +22,12 @@ class UpdateMagistracy extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            'content_ru' => 'required',
+            'content_uz' => 'required',
+            'content_en' => 'required',
         ];
     }
 }
