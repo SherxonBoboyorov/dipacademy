@@ -44,9 +44,9 @@ class MagistracyController extends Controller
         $data['image'] = Magistracy::uploadImage($request);
 
         if(Magistracy::create($data)) {
-            return redirect()->route('magistracy.index')-with('message', "Magistracy created successfully!!!");
+            return redirect()->route('magistracy.index')->with('message', "Magistracy created successfully!!!");
         }
-        return redirect()->route('magistracy.index')-with('message', "Unable to created Magistracy!!!");
+        return redirect()->route('magistracy.index')->with('message', "Unable to created Magistracy!!!");
     }
 
     /**

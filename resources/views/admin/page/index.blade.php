@@ -54,7 +54,7 @@
                                         <i class="fa fa-edit">Edit</i>
                                     </a>
                                 </td>
-                                <td>
+                                {{-- <td>
                                     <form action="{{ route('page.destroy', $page->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
@@ -62,7 +62,7 @@
                                             <i class="fa fa-trash">Delete</i>
                                         </button>
                                     </form>
-                                </td>
+                                </td> --}}
                             </tr>
                         @endforeach
                         </tbody>

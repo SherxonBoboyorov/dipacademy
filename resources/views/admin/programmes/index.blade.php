@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">List Masters</h4>
+                    <h4 class="page-title">List Programmes</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -32,7 +32,6 @@
                     <div>
                     <thead>
                         <tr>
-                            <th>Image</th>
                             <th>Title [Uzbek]</th>
                             <th>Title [Russian]</th>
                             <th>Title [English]</th>
@@ -40,21 +39,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($magistracies as $magistracy)
+                        @foreach ($programs as $program)
                         <tr>
+                            <td class="table_cart_list">{!! $program->content_uz !!}</td>
+                            <td class="table_cart_list">{!! $program->content_ru !!}</td>
+                            <td class="table_cart_list">{!! $program->content_en !!}</td>
                             <td>
-                                <img src="{{ asset($magistracy->image) }}" alt="" width="35" height="35">
-                            </td>
-                            <td class="table_cart_list">{!! $magistracy->content_uz !!}</td>
-                            <td class="table_cart_list">{!! $magistracy->content_ru !!}</td>
-                            <td class="table_cart_list">{!! $magistracy->content_en !!}</td>
-                            <td>
-                                <a href="{{ route('magistracy.edit', $magistracy->id) }}" class="btn btn-info btn-icon">
+                                <a href="{{ route('program.edit', $program->id) }}" class="btn btn-info btn-icon">
                                     <i class="fa fa-edit">Edit</i>
                                 </a>
                             </td>
                              {{-- <td>
-                                    <form action="{{ route('magistracy.destroy', $magistracy->id) }}" method="POST">
+                                    <form action="{{ route('program.destroy', $program->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-warning btn-icon">

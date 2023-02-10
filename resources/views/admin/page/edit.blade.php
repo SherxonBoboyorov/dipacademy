@@ -15,7 +15,7 @@
         </div>
 
         <!-- end page title end breadcrumb -->
-        <form action="{{ route('page.store', $page->id) }}" enctype="multipart/form-data" method="POST">
+        <form action="{{ route('page.update', $page->id) }}" enctype="multipart/form-data" method="POST">
             @csrf
             @method('PUT')
             <div class="card">
@@ -187,7 +187,7 @@
                       <div class="row">
                         <div class="col-md-12">
                             <label for="frame">Link</label>
-                            <input type="text" id="frame" value="{{ $page->framw }}" class="form-control" name="frame">
+                            <input type="text" id="frame" value="{{ $page->frame }}" class="form-control" name="frame">
                             @if($errors->has('frame'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">

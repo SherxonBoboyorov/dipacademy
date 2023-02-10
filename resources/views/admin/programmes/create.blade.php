@@ -9,41 +9,41 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Add Advisory Board</h4>
+                    <h4 class="page-title">Add Pragrammes</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
 
         <!-- end page title end breadcrumb -->
-        <form action="{{ route('advisoryboard.store') }}" enctype="multipart/form-data" method="POST">
+        <form action="{{ route('programmes.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="card">
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
-                            <label for="description_uz">Content [uzbek]</label>
-                            <textarea name="description_uz" class="my-editor" id="description_uz" cols="30" rows="10"></textarea>
-                            @if($errors->has('description_uz'))
+                            <label for="content_uz">Content [uzbek]</label>
+                            <textarea name="content_uz" class="my-editor" id="content_uz" cols="30" rows="10"></textarea>
+                            @if($errors->has('content_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                {{ $errors->first('description_uz') }}
+                                {{ $errors->first('content_uz') }}
                             </div>
                             @endif
                         </div>
                     </div>
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
-                            <label for="description_ru">Content [Russian]</label>
-                            <textarea name="description_ru" class="my-editor" id="description_ru" cols="30" rows="10"></textarea>
-                            @if($errors->has('description_ru'))
+                            <label for="content_ru">Content [Russian]</label>
+                            <textarea name="content_ru" class="my-editor" id="content_ru" cols="30" rows="10"></textarea>
+                            @if($errors->has('content_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                {{ $errors->first('description_ru') }}
+                                {{ $errors->first('content_ru') }}
                             </div>
                             @endif
                         </div>
@@ -51,14 +51,14 @@
 
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
-                            <label for="description_en">Content [English]</label>
-                            <textarea name="description_en" class="my-editor" id="description_en" cols="30" rows="10"></textarea>
-                            @if($errors->has('description_en'))
+                            <label for="content_en">Content [English]</label>
+                            <textarea name="content_en" class="my-editor" id="content_en" cols="30" rows="10"></textarea>
+                            @if($errors->has('content_en'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                {{ $errors->first('description_en') }}
+                                {{ $errors->first('content_en') }}
                             </div>
                             @endif
                         </div>
