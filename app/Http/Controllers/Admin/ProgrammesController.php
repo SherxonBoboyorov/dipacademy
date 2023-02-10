@@ -40,7 +40,6 @@ class ProgrammesController extends Controller
     public function store(CreateProgrammes $request)
     {
         $data = $request->all();
-        dd('data');
 
         if(Programmes::create($data)) {
             return redirect()->route('programmes.index')->with('message', "Programmes created seccessfully!!!");

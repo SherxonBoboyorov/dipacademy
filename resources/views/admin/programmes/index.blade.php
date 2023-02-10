@@ -45,7 +45,7 @@
                             <td class="table_cart_list">{!! $program->content_ru !!}</td>
                             <td class="table_cart_list">{!! $program->content_en !!}</td>
                             <td>
-                                <a href="{{ route('program.edit', $program->id) }}" class="btn btn-info btn-icon">
+                                <a href="{{ route('programmes.edit', $program->id) }}" class="btn btn-info btn-icon">
                                     <i class="fa fa-edit">Edit</i>
                                 </a>
                             </td>
