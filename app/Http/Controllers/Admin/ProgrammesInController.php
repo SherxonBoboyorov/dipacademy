@@ -87,7 +87,23 @@ class ProgrammesInController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (!ProgrammesIn::find($id)) {
+            return redirect()->route('programmesin.index')->with('message', "Programmes_In not fount");
+        }
+
+        $programmesin = ProgrammesIn::find($id);
+
+        $data = $request->all();
+        $data['image'] = ProgrammesIn::updateImage($request, $programmesin);
+
+        $data['slug_ru'] = Str::slug($request->title_ru, '-', 'ru');
+        $data['slug_uz'] = Str::slug($request->title_uz, '-', 'uz');
+        $data['slug_en'] = Str::slug($request->title_en, '-', 'en');
+
+        if ($programmesin->update($data)) {
+            return redirect()->route('programmesin.index')->with('message', "Programmes_In changed successfully");
+        }
+        return redirect()->route('programmesin.index')->with('message', "Unable to update Programmes_In");
     }
 
     /**
@@ -98,6 +114,19 @@ class ProgrammesInController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (!ProgrammesIn::find($id)) {
+            return redirect()->route('programmesin.index')->with('message', "Programmes_In not found");
+        }
+
+        $programmesin = ProgrammesIn::find($id);
+
+        if (File::exists(public_path() . $programmesin->image)) {
+            File::delete(public_path() . $programmesin->image);
+        }
+
+        if ($programmesin->delete()) {
+            return redirect()->route('programmesin.index')->with('message', "Programmes_In deleted successfully");
+        }
+        return redirect()->route('programmesin.index')->with('message', "unable to delete Programmes_In ");
     }
 }

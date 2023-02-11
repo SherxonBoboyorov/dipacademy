@@ -51,4 +51,50 @@ class ProgrammesIn extends Model
         'meta_description_ru',
         'meta_description_ru'
     ];
+
+    public static function uploadImage($request): ?string
+    {
+        if ($request->hasFile('image')) {
+
+            self::checkDirectory();
+
+            $request->file('image')
+                ->move(
+                    public_path() . '/upload/programmesin/' . date('d-m-Y'),
+                    $request->file('image')->getClientOriginalName()
+                );
+            return '/upload/programmesin/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+        }
+
+        return null;
+    }
+
+    public static function updateImage($request, $programmesin): string
+    {
+        if ($request->hasFile('image')) {
+            if (File::exists(public_path() . $programmesin->image)) {
+                File::delete(public_path() . $programmesin->image);
+            }
+
+            self::checkDirectory();
+
+            $request->file('image')
+                ->move(
+                    public_path() . '/upload/programmesin/' . date('d-m-Y'),
+                    $request->file('image')->getClientOriginalName()
+                );
+            return '/upload/programmesin/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+        }
+
+        return $programmesin->image;
+    }
+
+    private static function checkDirectory(): bool
+    {
+        if (!File::exists(public_path() . '/upload/programmesin/' . date('d-m-Y'))) {
+            File::makeDirectory(public_path() . '/upload/programmesin/' . date('d-m-Y'), $mode = 0777, true, true);
+        }
+
+        return true;
+    }
 }

@@ -358,15 +358,39 @@
                                        <p>List</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a href="{{ route('programmes.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li> --}}
+                                </ul>
+                          </li>
+                         {{-- end--}}
+
+
+                          {{-- start--}}
+
+                          <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    Programmes_In
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('programmesin.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('programmesin.create') }}" class="nav-link">
                                        <p>Create</p>
                                     </a>
                                 </li>
                                 </ul>
                           </li>
                          {{-- end--}}
-
 
 
                 </ul>

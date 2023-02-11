@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\VacancyController;
 use App\Http\Controllers\Admin\MagistracyController;
 use App\Http\Controllers\Admin\ProgrammesController;
+use App\Http\Controllers\Admin\ProgrammesInController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -39,7 +40,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
          'video' => VideoController::class,
          'vacancy' => VacancyController::class,
          'magistracy' => MagistracyController::class,
-         'programmes' => ProgrammesController::class
+         'programmes' => ProgrammesController::class,
+         'programmesin' => ProgrammesInController::class
      ]);
 });
 
