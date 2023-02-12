@@ -42,7 +42,7 @@
                         <tbody>
                         @foreach ($programmes_ins as $programmesin)
                             <tr>
-                                <td>{{ $page->id }}</td>
+                                <td>{{ $programmesin->id }}</td>
                                 <td>
                                     <img src="{{ asset($programmesin->image) }}" alt="" width="35" height="35">
                                 </td>

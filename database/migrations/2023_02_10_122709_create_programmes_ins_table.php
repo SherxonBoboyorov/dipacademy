@@ -50,10 +50,6 @@ return new class extends Migration
             $table->string('application_deadline_uz');
             $table->string('application_deadline_en');
 
-            $table->text('description_ru');
-            $table->text('description_uz');
-            $table->text('description_en');
-
             $table->text('content_ru');
             $table->text('content_uz');
             $table->text('content_en');
