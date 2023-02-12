@@ -51,7 +51,7 @@ class ProgrammesInController extends Controller
         if(ProgrammesIn::create($data)) {
             return redirect()->route('programmesin.index')->with('message', "Programmes_In created successfully!!!");
         }
-        return redirect()->route('programmesin.index')->with('message', "Programmes_In created successfully!!!");
+        return redirect()->route('programmesin.index')->with('message', "Unable to created Programmes_In!!!");
 
     }
 

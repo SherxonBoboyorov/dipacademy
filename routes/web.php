@@ -18,6 +18,8 @@ use App\Http\Controllers\Admin\VacancyController;
 use App\Http\Controllers\Admin\MagistracyController;
 use App\Http\Controllers\Admin\ProgrammesController;
 use App\Http\Controllers\Admin\ProgrammesInController;
+use App\Http\Controllers\Admin\ProgrammesMasterController;
+use App\Http\Controllers\Admin\ProgrammesMasterInController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -41,7 +43,9 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
          'vacancy' => VacancyController::class,
          'magistracy' => MagistracyController::class,
          'programmes' => ProgrammesController::class,
-         'programmesin' => ProgrammesInController::class
+         'programmesin' => ProgrammesInController::class,
+         'programmaster' => ProgrammesMasterController::class,
+         'programmesmasterin' => ProgrammesMasterInController::class
      ]);
 });
 
