@@ -26,6 +26,9 @@ use App\Http\Controllers\Admin\AdmissionMasterController;
 use App\Http\Controllers\Admin\AdmissionMasterInController;
 use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\ResearchController;
+use App\Http\Controllers\Admin\InternationalController;
+use App\Http\Controllers\Admin\WhyDipAcademyController;
+use App\Http\Controllers\Admin\OurPartnerController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -57,7 +60,10 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
          'admissionmaster' => AdmissionMasterController::class,
          'admissionmasterin' => AdmissionMasterInController::class,
          'options' => OptionsController::class,
-         'research' => ResearchController::class
+         'research' => ResearchController::class,
+         'international' => InternationalController::class,
+         'whydipacademy' => WhyDipAcademyController::class,
+         'ourpartner' => OurPartnerController::class
 
      ]);
 });

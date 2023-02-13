@@ -120,6 +120,55 @@
                      </li>
                     {{-- end --}}
 
+
+                      {{-- start--}}
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                        <i class="nav-icon"></i>
+                        <p>
+                            Why to choose The Academy
+                             <i class="right fas fa-angle-left"></i>
+                        </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('whydipacademy.index') }}" class="nav-link">
+                               <p>List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('whydipacademy.create') }}" class="nav-link">
+                               <p>Create</p>
+                            </a>
+                        </li>
+                        </ul>
+                     </li>
+                     {{-- end --}}
+
+                       {{-- start--}}
+                       <li class="nav-item">
+                        <a href="#" class="nav-link">
+                        <i class="nav-icon"></i>
+                        <p>
+                            Our Partners
+                             <i class="right fas fa-angle-left"></i>
+                        </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('ourpartner.index') }}" class="nav-link">
+                               <p>List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('ourpartner.create') }}" class="nav-link">
+                               <p>Create</p>
+                            </a>
+                        </li>
+                        </ul>
+                     </li>
+                     {{-- end --}}
+
                      {{-- start--}}
                      <li class="nav-item">
                         <a href="#" class="nav-link">
@@ -553,6 +602,30 @@
                                 </li>
                                 {{-- <li class="nav-item">
                                     <a href="{{ route('research.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li> --}}
+                                </ul>
+                          </li>
+                         {{-- end--}}
+
+                          {{-- start--}}
+
+                          <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    International
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('international.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                {{-- <li class="nav-item">
+                                    <a href="{{ route('international.create') }}" class="nav-link">
                                        <p>Create</p>
                                     </a>
                                 </li> --}}
