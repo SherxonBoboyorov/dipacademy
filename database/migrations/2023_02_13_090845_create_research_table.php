@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('programmes_masters', function (Blueprint $table) {
+        Schema::create('research', function (Blueprint $table) {
             $table->id();
             
             $table->text('content_ru');
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('programmes_masters');
+        Schema::dropIfExists('research');
     }
 };

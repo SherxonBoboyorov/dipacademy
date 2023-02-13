@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('programmes_masters', function (Blueprint $table) {
+        Schema::create('admissions', function (Blueprint $table) {
             $table->id();
-            
+
             $table->text('content_ru');
             $table->text('content_uz');
             $table->text('content_en');
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->text('meta_description_ru')->nullable();
             $table->text('meta_description_uz')->nullable();
             $table->text('meta_description_en')->nullable();
-
+            
             $table->timestamps();
         });
     }
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('programmes_masters');
+        Schema::dropIfExists('admissions');
     }
 };

@@ -420,7 +420,7 @@
 
                           <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon"></i>
+                                <i class="nav-icon  fas fa-tachometer-alt"></i>
                                 <p>
                                     Programmes_Master_In
                                 </p>
@@ -439,6 +439,152 @@
                                 </ul>
                           </li>
                          {{-- end--}}
+
+                         {{-- start--}}
+
+                         <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    Admission
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('admission.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                {{-- <li class="nav-item">
+                                    <a href="{{ route('admission.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li> --}}
+                                </ul>
+                          </li>
+                         {{-- end--}}
+
+                          {{-- start--}}
+
+                          <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    AdmissionIn
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('admissionin.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admissionin.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li>
+                                </ul>
+                          </li>
+                         {{-- end--}}
+
+                          {{-- start--}}
+
+                          <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    AdmissionMaster
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('admissionmaster.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admissionmaster.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li>
+                                </ul>
+                          </li>
+                         {{-- end--}}
+
+                          {{-- start--}}
+
+                          <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    AdmissionMasterIn
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('admissionmasterin.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admissionmasterin.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li>
+                                </ul>
+                          </li>
+                         {{-- end--}}
+
+                          {{-- start--}}
+
+                          <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    Research
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('research.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                {{-- <li class="nav-item">
+                                    <a href="{{ route('research.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li> --}}
+                                </ul>
+                          </li>
+                         {{-- end--}}
+
+
+                           {{-- start--}}
+
+                           <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    Options
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('options.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('options.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li>
+                                </ul>
+                          </li>
+                         {{-- end--}}
+
 
 
 

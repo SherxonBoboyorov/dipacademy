@@ -20,6 +20,12 @@ use App\Http\Controllers\Admin\ProgrammesController;
 use App\Http\Controllers\Admin\ProgrammesInController;
 use App\Http\Controllers\Admin\ProgrammesMasterController;
 use App\Http\Controllers\Admin\ProgrammesMasterInController;
+use App\Http\Controllers\Admin\AdmissionController;
+use App\Http\Controllers\Admin\AdmissionInController;
+use App\Http\Controllers\Admin\AdmissionMasterController;
+use App\Http\Controllers\Admin\AdmissionMasterInController;
+use App\Http\Controllers\Admin\OptionsController;
+use App\Http\Controllers\Admin\ResearchController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -45,7 +51,14 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
          'programmes' => ProgrammesController::class,
          'programmesin' => ProgrammesInController::class,
          'programmaster' => ProgrammesMasterController::class,
-         'programmesmasterin' => ProgrammesMasterInController::class
+         'programmesmasterin' => ProgrammesMasterInController::class,
+         'admission' => AdmissionController::class,
+         'admissionin' => AdmissionInController::class,
+         'admissionmaster' => AdmissionMasterController::class,
+         'admissionmasterin' => AdmissionMasterInController::class,
+         'options' => OptionsController::class,
+         'research' => ResearchController::class
+
      ]);
 });
 
