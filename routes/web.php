@@ -34,6 +34,10 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\TenderController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
 
+// front
+
+use App\Http\Controllers\Front\IndexController;
+
 
 Auth::routes();
 
@@ -73,6 +77,15 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
 
      ]);
 });
+
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
+        Route::get('/', [IndexController::class, 'hompage'])->name('/');
+ });
 
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
