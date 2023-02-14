@@ -2,46 +2,23 @@
 
 @section('content')
 
-
     <!-- slider start -->
 
     <div class="slider">
         <div class="slider__list">
-            <div class="slider__item" style="background: linear-gradient(0deg, rgba(18, 54, 84, 0.5), rgba(18, 54, 84, 0.5)), url(foto/slick_1.png);">
+            @foreach ($sliders as $slider)
+            <div class="slider__item" style="background: linear-gradient(0deg, rgba(18, 54, 84, 0.5), rgba(18, 54, 84, 0.5)), url({{ asset($slider->image) }});">
                 <section class="container">
                     <div class="slider__cart">
-                        <h1 class="slider__title__h1">Good future</h1>
+                        <h1 class="slider__title__h1">{{ $slider->{'title_' . app()->getLocale()} }}</h1>
                         <div class="slider__text">
-                            <p>High quality training</p>
+                            <p>{{ $slider->{'description_' . app()->getLocale()} }}</p>
                         </div>
-                        <a href="#!" class="slider__link">More</a>
+                        <a href="{{ $slider->link }}" class="slider__link">More</a>
                     </div>
                 </section>
             </div>
-
-            <div class="slider__item" style="background: linear-gradient(0deg, rgba(18, 54, 84, 0.5), rgba(18, 54, 84, 0.5)), url(foto/slick_2.png);">
-                <section class="container">
-                    <div class="slider__cart">
-                        <h1 class="slider__title__h1">Good future</h1>
-                        <div class="slider__text">
-                            <p>High quality training</p>
-                        </div>
-                        <a href="#!" class="slider__link">More</a>
-                    </div>
-                </section>
-            </div>
-
-            <div class="slider__item" style="background: linear-gradient(0deg, rgba(18, 54, 84, 0.5), rgba(18, 54, 84, 0.5)), url(foto/slick_3.png);">
-                <section class="container">
-                    <div class="slider__cart">
-                        <h1 class="slider__title__h1">Good future</h1>
-                        <div class="slider__text">
-                            <p>High quality training</p>
-                        </div>
-                        <a href="#!" class="slider__link">More</a>
-                    </div>
-                </section>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -54,30 +31,32 @@
         <section class="container">
             <div class="about__cart">
                 <div class="about__list">
+                    @foreach ($pages as $page)
+
                     <div class="about__item__text">
-                        <h2 class="about__title__h2">about diplomatic academy</h2>
+                        <h2 class="about__title__h2">{{ $page->{'title_' . app()->getLocale()} }}</h2>
 
                         <div class="about__text">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip giat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip unt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam,
+                                {!! $page->{'content_' . app()->getLocale()} !!}
                             </p>
                         </div>
 
-                        <a href="TheAcademy.html" class="about__link">More <span><i class="fas fa-chevron-right"></i></span></a>
+                        <a href="{{ route('about') }}" class="about__link">More <span><i class="fas fa-chevron-right"></i></span></a>
                     </div>
 
                     <div class="about__item">
                         <p class="text-center">
-                            <a data-fancybox href="video/video_2022-12-23_16-09-42.mp4">
+                            <a data-fancybox href="{{ $page->frame }}">
                                 <section>
-                                    <img class="inline" width="500" alt="" src="foto/about_video.png"/>
+                                    <img class="inline" width="500" alt="" src="{{ asset($page->image) }}"/>
                                     <!-- play start -->
 
                                     <div class="button__min is-play" href="#">
                                         <div class="button-outer-circle has-scale-animation"></div>
                                         <div class="button-outer-circle has-scale-animation has-delay-short"></div>
                                         <div class="button-icon is-play">
-                                            <img class="about__item__img__play" alt="All" src="foto/pley.svg">
+                                            <img class="about__item__img__play" alt="All" src="{{ asset('front/foto/pley.svg') }}">
                                         </div>
                                     </div>
 
@@ -86,6 +65,7 @@
                             </a>
                         </p>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </section>

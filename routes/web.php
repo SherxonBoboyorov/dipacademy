@@ -37,6 +37,12 @@ use Unisharp\Laravel\LaravelFilemanager\Lfm;
 // front
 
 use App\Http\Controllers\Front\IndexController;
+use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\AdvisoryController;
+use App\Http\Controllers\Front\LeaderController;
+use App\Http\Controllers\Front\NormsStatementController;
+use App\Http\Controllers\Front\DepartmentsStaffController;
+use App\Http\Controllers\Front\CommandController;
 
 
 Auth::routes();
@@ -85,6 +91,15 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
         Route::get('/', [IndexController::class, 'hompage'])->name('/');
+        Route::get('about', [AboutController::class, 'about'])->name('about');
+        Route::get('advisory', [AdvisoryController::class, 'advisory'])->name('advisory');
+        Route::get('leadership', [LeaderController::class, 'leadership'])->name('leadership');
+        Route::get('NormsStatements', [NormsStatementController::class, 'NormsStatements'])->name('NormsStatements');
+        Route::get('DepartmentsStaffs', [DepartmentsStaffController::class, 'list'])->name('DepartmentsStaffs');
+        Route::get('DepartmentsStaffs/{slug}', [DepartmentsStaffController::class, 'show'])->name('DepartmentsStaff');
+        Route::get('team/{slug}', [CommandController::class, 'team'])->name('team');
+
+
  });
 
 

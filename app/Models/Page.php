@@ -11,6 +11,7 @@ class Page extends Model
     use HasFactory;
 
     protected $table = 'pages';
+    
     protected $fillable = [
         'image',
         'title_ru',

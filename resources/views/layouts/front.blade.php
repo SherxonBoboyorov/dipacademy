@@ -126,31 +126,31 @@
                                         <ul class="header__bottom__none__menu">
 
                                             <li>
-                                                <a href="TheAcademy.html" class="header__bottom__link">
+                                                <a href="{{ route('about') }}" class="header__bottom__link">
                                                     АКАДЕМИЯ
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="advisory_board.html" class="header__bottom__link">
+                                                <a href="{{ route('advisory') }}" class="header__bottom__link">
                                                     Наблюдательный совет
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="Leadership.html" class="header__bottom__link">
+                                                <a href="{{ route('leadership') }}" class="header__bottom__link">
                                                     Руководство
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="NormsStatements.html" class="header__bottom__link">
+                                                <a href="{{ route('NormsStatements') }}" class="header__bottom__link">
                                                     Нормативы, акты
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="DepartmentsStaff.html" class="header__bottom__link">
+                                                <a href="{{ route('DepartmentsStaffs') }}" class="header__bottom__link">
                                                     Отделы и Сотрудники
                                                 </a>
                                             </li>
