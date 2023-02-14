@@ -8,14 +8,14 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Add slider</h4>
+                        <h4 class="page-title">Add Category</h4>
                     </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
 
             <!-- end page title end breadcrumb -->
-            <form action="{{ route('slider.store') }}" enctype="multipart/form-data" method="POST">
+            <form action="{{ route('category.store') }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 <div class="card">
                     <div class="card-body">
@@ -57,7 +57,7 @@
                                 @endif
                             </div>
                         </div>
-                        
+
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-success btn-block">Save</button>

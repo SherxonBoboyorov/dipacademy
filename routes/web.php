@@ -29,6 +29,9 @@ use App\Http\Controllers\Admin\ResearchController;
 use App\Http\Controllers\Admin\InternationalController;
 use App\Http\Controllers\Admin\WhyDipAcademyController;
 use App\Http\Controllers\Admin\OurPartnerController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\TenderController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -63,7 +66,10 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
          'research' => ResearchController::class,
          'international' => InternationalController::class,
          'whydipacademy' => WhyDipAcademyController::class,
-         'ourpartner' => OurPartnerController::class
+         'ourpartner' => OurPartnerController::class,
+         'category' => CategoryController::class,
+         'article' => ArticleController::class,
+         'tender' => TenderController::class
 
      ]);
 });

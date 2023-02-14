@@ -659,6 +659,77 @@
                          {{-- end--}}
 
 
+                            {{-- start--}}
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    News Category
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('category.index') }}" class="nav-link">
+                                    <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('category.create') }}" class="nav-link">
+                                    <p>Create</p>
+                                    </a>
+                                </li>
+                                </ul>
+                            </li>
+                            {{-- end --}}
+
+                             {{-- start--}}
+                               <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p>
+                                    News
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('article.index') }}" class="nav-link">
+                                    <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('article.create') }}" class="nav-link">
+                                    <p>Create</p>
+                                    </a>
+                                </li>
+                                </ul>
+                            </li>
+                            {{-- end --}}
+
+                                 {{-- start--}}
+                                 <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                    <i class="nav-icon"></i>
+                                    <p>
+                                        Tenders
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{ route('tender.index') }}" class="nav-link">
+                                        <p>List</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('tender.create') }}" class="nav-link">
+                                        <p>Create</p>
+                                        </a>
+                                    </li>
+                                    </ul>
+                                </li>
+                                {{-- end --}}
 
 
 
