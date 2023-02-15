@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Page;
 use App\Models\Magistracy;
 use App\Models\Ourpartner;
+use App\Models\ProgrammesIn;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -15,11 +16,14 @@ class AboutController extends Controller
         $pages = Page::orderBy('created_at', 'DESC')->get();
         $magistracies = Magistracy::orderBy('created_at', 'DESC')->get();
         $ourpartners = Ourpartner::orderBy('created_at', 'DESC')->get();
+        $programmesins = ProgrammesIn::orderBy('created_at', 'DESC')->get();
+
 
         return view('front.academy', compact(
             'pages',
             'magistracies',
-            'ourpartners'
+            'ourpartners',
+            'programmesins'
         ));
     }
 }

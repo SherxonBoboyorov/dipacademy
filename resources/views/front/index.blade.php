@@ -82,49 +82,21 @@
                 <h2 class="about__title__h2">programmes for diplomats</h2>
 
                 <div class="programmes_for__list">
-
+                    @foreach ($programmesins as $programmesin)
                     <div class="programmes_for__item">
                         <div class="programmes_for__img">
-                            <img src="foto/programmes_1.png" alt="programmes">
+                            <img src="{{ asset($programmesin->image) }}" alt="programmes">
                         </div>
 
                         <div class="programmes_for__text">
                             <p>
-                                Systematic training and advanced training course for reserve diplomats
+                                {{ $programmesin->{'title_' . app()->getLocale()} }}
                             </p>
                         </div>
 
-                        <a href="programmes_in.html" class="programmes_for__link">More <span><i class="fas fa-chevron-right"></i></span></a>
+                        <a href="{{ route('programmesin', $programmesin->{'slug_' . app()->getLocale()}) }}" class="programmes_for__link">More <span><i class="fas fa-chevron-right"></i></span></a>
                     </div>
-
-                    <div class="programmes_for__item">
-                        <div class="programmes_for__img">
-                            <img src="foto/programmes_2.png" alt="programmes">
-                        </div>
-
-                        <div class="programmes_for__text">
-                            <p>
-                                SysA systematic and intensive training course for appointed ambassadors
-                            </p>
-                        </div>
-
-                        <a href="programmes_in.html" class="programmes_for__link">More <span><i class="fas fa-chevron-right"></i></span></a>
-                    </div>
-
-                    <div class="programmes_for__item">
-                        <div class="programmes_for__img">
-                            <img src="foto/programmes_1.png" alt="programmes">
-                        </div>
-
-                        <div class="programmes_for__text">
-                            <p>
-                                MFA administrative and technical staff for long-term business trips abroad
-                            </p>
-                        </div>
-
-                        <a href="programmes_in.html" class="programmes_for__link">More <span><i class="fas fa-chevron-right"></i></span></a>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -139,18 +111,23 @@
         <section class="container">
             <div class="magistracy__cart">
                 <div class="magistracy__list">
+                    @foreach ($magistracies as $magistracy)
+
                     <div class="magistracy__img">
-                        <img src="foto/magistracy.png" alt="">
+                        <img src="{{ asset($magistracy->image) }}" alt="">
                     </div>
 
                     <div class="magistracy__item">
                         <h2 class="about__title__h2">магистратура</h2>
                         <div class="about__text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                            <p>
+                                {!! $magistracy->{'content_' . app()->getLocale()} !!}
+                            </p>
                         </div>
 
-                        <a href="AdmissionsMaster.html" class="magistracy__link">Подробнее</a>
+                        <a href="{{ route('about') }}" class="magistracy__link">Подробнее</a>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -244,47 +221,17 @@
                 <h2 class="about__title__h2">why to choose the academy</h2>
 
                 <div class="choose_academy__list">
-
+                   @foreach ($whydipacademies as $whydipacademy)
                     <div class="choose_academy__item">
-                        <a href="#!">
+                        <a>
                             <div class="choose_academy__img">
-                                <img src="foto/choose_academy.png" alt="choose_academy">
+                                <img src="{{ asset($whydipacademy->image) }}" alt="choose_academy">
                             </div>
 
-                            <h3 class="choose_academy__title__h3">Quality of programmes</h3>
+                            <h3 class="choose_academy__title__h3">{{ $whydipacademy->{'title_' . app()->getLocale()} }}</h3>
                         </a>
                     </div>
-
-                    <div class="choose_academy__item">
-                        <a href="#!">
-                            <div class="choose_academy__img">
-                                <img src="foto/choose_academy_1.png" alt="choose_academy">
-                            </div>
-
-                            <h3 class="choose_academy__title__h3">High level lecturers</h3>
-                        </a>
-                    </div>
-
-                    <div class="choose_academy__item">
-                        <a href="#!">
-                            <div class="choose_academy__img">
-                                <img src="foto/choose_academy_2.png" alt="choose_academy">
-                            </div>
-
-                            <h3 class="choose_academy__title__h3">Well trained staff</h3>
-                        </a>
-                    </div>
-
-                    <div class="choose_academy__item">
-                        <a href="#!">
-                            <div class="choose_academy__img">
-                                <img src="foto/choose_academy_3.png" alt="choose_academy">
-                            </div>
-
-                            <h3 class="choose_academy__title__h3">Government network</h3>
-                        </a>
-                    </div>
-
+                  @endforeach
                 </div>
             </div>
         </section>
@@ -300,21 +247,22 @@
             <div class="news__cart">
                 <div class="news__cart__list">
                     <h2 class="about__title__h2">News</h2>
-                    <a href="News.html" class="news__all__link">
+                    <a href="{{ route('articles') }}" class="news__all__link">
                         All news <span><i class="fas fa-chevron-right"></i></span>
                     </a>
                 </div>
 
                 <div class="news__list">
+                   @foreach ($articles as $article)
                     <div class="news__item">
-                        <a href="news_in.html">
+                        <a href="{{ route('article', $article->{'slug_' . app()->getLocale()}) }}">
                             <div class="news__img">
-                                <img src="foto/news_1.png" alt="news">
+                                <img src="{{ asset($article->image) }}" alt="news">
                                 <h3 class="news__title__h3">Publications</h3>
                             </div>
 
                             <div class="news__item__list">
-                                <h4 class="news__data">12.04.2022</h4>
+                                <h4 class="news__data">{{  date('d.m.Y', strtotime($article->created_at)) }}</h4>
                                 <h5 class="news__eyes">
                                     <span><i class="fas fa-eye"></i></span>
                                     2 657
@@ -322,70 +270,17 @@
                             </div>
 
                             <h2 class="news__title__h2">
-                                Ut enim ad minim veniam, quis nostrud
+                                {{ $article->{'title_' . app()->getLocale()} }}
                             </h2>
 
                             <div class="news__text">
                                 <p>
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                    {!! $article->{'content_' . app()->getLocale()} !!}
                                 </p>
                             </div>
                         </a>
                     </div>
-
-                    <div class="news__item">
-                        <a href="news_in.html">
-                            <div class="news__img">
-                                <img src="foto/news_2.png" alt="news">
-                                <h3 class="news__title__h3">research</h3>
-                            </div>
-
-                            <div class="news__item__list">
-                                <h4 class="news__data">12.04.2022</h4>
-                                <h5 class="news__eyes">
-                                    <span><i class="fas fa-eye"></i></span>
-                                    2 657
-                                </h5>
-                            </div>
-
-                            <h2 class="news__title__h2">
-                                Exercitation ullamco laboris nisi ut aliquip ex ea
-                            </h2>
-
-                            <div class="news__text">
-                                <p>
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="news__item">
-                        <a href="news_in.html">
-                            <div class="news__img">
-                                <img src="foto/news_3.png" alt="news">
-                                <h3 class="news__title__h3">research</h3>
-                            </div>
-
-                            <div class="news__item__list">
-                                <h4 class="news__data">12.04.2022</h4>
-                                <h5 class="news__eyes">
-                                    <span><i class="fas fa-eye"></i></span>
-                                    2 657
-                                </h5>
-                            </div>
-
-                            <h2 class="news__title__h2">
-                                Duis aute irure dolor in reprehenderit in voluptate
-                            </h2>
-
-                            <div class="news__text">
-                                <p>
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-                                </p>
-                            </div>
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -402,63 +297,15 @@
                 <h2 class="about__title__h2">our partners</h2>
 
                 <div class="our_partners__list owl-carousel">
-
+                  @foreach ($ourpartners as $ourpartner)
                     <div class="our_partners__item">
                         <div class="our_partners__img">
-                            <a href="#!">
-                                <img src="foto/our_partners_1.png" alt="our_partners">
+                            <a>
+                                <img src="{{ asset($ourpartner->image) }}" alt="our_partners">
                             </a>
                         </div>
                     </div>
-
-                    <div class="our_partners__item">
-                        <div class="our_partners__img">
-                            <a href="#!">
-                                <img src="foto/our_partners_2.png" alt="our_partners">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="our_partners__item">
-                        <div class="our_partners__img">
-                            <a href="#!">
-                                <img src="foto/our_partners_3.png" alt="our_partners">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="our_partners__item">
-                        <div class="our_partners__img">
-                            <a href="#!">
-                                <img src="foto/our_partners_4.png" alt="our_partners">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="our_partners__item">
-                        <div class="our_partners__img">
-                            <a href="#!">
-                                <img src="foto/our_partners_5.png" alt="our_partners">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="our_partners__item">
-                        <div class="our_partners__img">
-                            <a href="#!">
-                                <img src="foto/our_partners_3.png" alt="our_partners">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="our_partners__item">
-                        <div class="our_partners__img">
-                            <a href="#!">
-                                <img src="foto/our_partners_4.png" alt="our_partners">
-                            </a>
-                        </div>
-                    </div>
-
+                  @endforeach
                 </div>
             </div>
         </section>

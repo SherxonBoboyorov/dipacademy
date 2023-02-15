@@ -70,7 +70,7 @@
                     </div>
                 </div>
 
-            
+
                 <div class="programmes_in__item">
                     <h2 class="about__title__h2">Отзывы выпускников</h2>
 

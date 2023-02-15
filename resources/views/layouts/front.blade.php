@@ -263,7 +263,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="International.html" class="header__bottom__link">international</a>
+                                    <a href="{{ route('international') }}" class="header__bottom__link">international</a>
                                 </li>
 
                                 <li>
@@ -276,13 +276,13 @@
                                         <ul class="header__bottom__none__menu">
 
                                             <li>
-                                                <a href="News.html" class="header__bottom__link">
+                                                <a href="{{ route('articles') }}" class="header__bottom__link">
                                                     news
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="tenders.html" class="header__bottom__link">
+                                                <a href="{{ route('tenders') }}" class="header__bottom__link">
                                                     Tenders
                                                 </a>
                                             </li>
@@ -292,7 +292,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="Contacts.html" class="header__bottom__link">contacts</a>
+                                    <a href="{{ route('contacts') }}" class="header__bottom__link">contacts</a>
                                 </li>
                             </ul>
                         </section>
@@ -407,11 +407,11 @@
                         <div class="footer__item__list">
                             <ul class="footer__menu">
                                 <li>
-                                    <a href="TheAcademy.html" class="footer__menu__link">The Academy</a>
+                                    <a href="{{ route('about') }}" class="footer__menu__link">The Academy</a>
                                 </li>
 
                                 <li>
-                                    <a href="Programmes.html" class="footer__menu__link">Programmes</a>
+                                    <a href="{{ route('programmes') }}" class="footer__menu__link">Programmes</a>
                                 </li>
 
                                 <li>
@@ -421,11 +421,11 @@
 
                             <ul class="footer__menu">
                                 <li>
-                                    <a href="News.html" class="footer__menu__link">news</a>
+                                    <a href="{{ route('articles') }}" class="footer__menu__link">news</a>
                                 </li>
 
                                 <li>
-                                    <a href="Contacts.html" class="footer__menu__link">contacts</a>
+                                    <a href="{{ route('contacts') }}" class="footer__menu__link">contacts</a>
                                 </li>
                             </ul>
                         </div>

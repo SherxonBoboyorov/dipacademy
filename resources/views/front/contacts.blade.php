@@ -4,7 +4,7 @@
 
     <!-- academy start -->
 
-    <div class="academy" style="background-image:url(foto/academy_fon.png)">
+    <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
                 <h2 class="academy__title__h2">Contacts</h2>
@@ -13,7 +13,7 @@
                         <a href="{{ route('/') }}" class="academy__menu__link">Main</a>
                     </li>
                     <li>
-                        <a href="Contacts.html" class="academy__menu__link">Contacts</a>
+                        <a class="academy__menu__link">Contacts</a>
                     </li>
                 </ul>
             </div>
@@ -34,47 +34,49 @@
                             <span>
                                 address:
                             </span>
-                            54 Mustakillik Ave., Tashkent 100007, Uzbekistan
+                            {{ $options->where('key', 'address_' . app()->getLocale())->first()->value }}
                         </a>
                     </li>
 
                     <li>
-                        <a href="tel:+998 71 267-39-50" class="contacts__menu__link">
+                        <a href="tel:{{ $options->where('key', 'phone')->first()->value }}" class="contacts__menu__link">
                             <span>
                                 Phone:
                             </span>
-                            (+998 71) 267-39-50
+                            {{ $options->where('key', 'phone')->first()->value }}
                         </a>
                     </li>
 
+
                     <li>
-                        <a href="tel:+998 71 267-09-00" class="contacts__menu__link">
+                        <a href="tel:{{ $options->where('key', 'fax')->first()->value }}" class="contacts__menu__link">
                             <span>
                                 Fax:
                             </span>
-                            Fax: (+998 71) 267-09-00
+                            {{ $options->where('key', 'fax')->first()->value }}
                         </a>
                     </li>
 
                     <li>
-                        <a href="mailto:academy@uwed.uz" class="contacts__menu__link">
+                        <a href="mailto:{{ $options->where('key', 'email')->first()->value }}" class="contacts__menu__link">
                             <span>
                                 Электронная почта:
                             </span>
-                            academy@uwed.uz
+                            {{ $options->where('key', 'email')->first()->value }}
                         </a>
                     </li>
                 </ul>
 
                 <h2 class="about__title__h2">Обратная связь</h2>
 
-                <form action="#!" class="contacts__from">
-                    <input type="text" class="contacts__input" placeholder="ФИО">
+                <form action="{{ route('saveCallback') }}" class="contacts__from" method="POST">
+                    @csrf
+                    <input type="text" name="name" class="contacts__input" placeholder="ФИО" required>
                     <section class="contacts__from__list">
-                        <input type="email" class="contacts__input" placeholder="Электронная почта">
-                        <input type="tel" class="contacts__input" placeholder="Телефон">
+                        <input type="email" name="email" class="contacts__input" placeholder="Электронная почта" required>
+                        <input type="tel" name="phone" class="contacts__input" placeholder="Телефон" required>
                     </section>
-                    <textarea class="contacts__textarea" placeholder="Сообщение"></textarea>
+                    <textarea class="contacts__textarea" name="comment" placeholder="Сообщение" required></textarea>
                     <button class="contacts__button" type="submit">Отправить</button>
                 </form>
             </div>

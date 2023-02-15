@@ -57,9 +57,11 @@
                 <h2 class="about__title__h2">programmes</h2>
 
                 <ul class="programmes__menu">
+                  @foreach ($programmesins as $programmesin)
                     <li>
-                        <a href="programmes_in.html" class="programmes__menu__link">Programmes for government sector</a>
+                        <a href="{{ route('programmesin', $programmesin->{'slug_' . app()->getLocale()}) }}" class="programmes__menu__link">{{ $programmesin->{'title_' . app()->getLocale()} }}</a>
                     </li>
+                  @endforeach
                 </ul>
             </div>
         </section>

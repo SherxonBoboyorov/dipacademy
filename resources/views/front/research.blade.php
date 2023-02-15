@@ -31,8 +31,6 @@
 
                 <div class="programmes_in__item">
                     @foreach ($research as $research)
-
-                    {{-- <h2 class="about__title__h2">Lorem ipsum dolor sit amet</h2> --}}
                     <div class="academy_contint__text clearfix">
                         <p>
                             {!! $research->{'content_' . app()->getLocale()} !!}

@@ -50,6 +50,10 @@ use App\Http\Controllers\Front\EReceptionController;
 use App\Http\Controllers\Front\FacultyDiplomacyController;
 use App\Http\Controllers\Front\ProgrammerController;
 use App\Http\Controllers\Front\ResearcController;
+use App\Http\Controllers\Front\InternationController;
+use App\Http\Controllers\Front\ContactController;
+use App\Http\Controllers\Front\NewsController;
+use App\Http\Controllers\Front\TeenderController;
 
 
 Auth::routes();
@@ -115,6 +119,14 @@ Route::group(
         Route::get('programmes', [ProgrammerController::class, 'programmes'])->name('programmes');
         Route::get('programmesins/{slug}', [ProgrammerController::class, 'show'])->name('programmesin');
         Route::get('research', [ResearcController::class, 'research'])->name('research');
+        Route::get('international', [InternationController::class, 'international'])->name('international');
+        Route::get('contacts', [ContactController::class, 'contacts'])->name('contacts');
+        Route::post('save_callback', [ContactController::class, 'saveCallback'])->name('saveCallback');
+        Route::get('articles', [NewsController::class, 'list'])->name('articles');
+        Route::get('articles/{slug}', [NewsController::class, 'show'])->name('article');
+        Route::get('tenders', [TeenderController::class, 'list'])->name('tenders');
+        Route::get('tenders/{slug}', [TeenderController::class, 'show'])->name('tender');
+
 
 
 

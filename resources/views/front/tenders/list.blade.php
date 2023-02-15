@@ -6,16 +6,16 @@
 
     <!-- academy start -->
 
-    <div class="academy" style="background-image:url(foto/academy_fon.png)">
+    <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
                 <h2 class="academy__title__h2">Tenders</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="index.html" class="academy__menu__link">Main</a>
+                        <a href="{{ route('/') }}" class="academy__menu__link">Main</a>
                     </li>
                     <li>
-                        <a href="tenders.html" class="academy__menu__link">Tenders</a>
+                        <a class="academy__menu__link">Tenders</a>
                     </li>
                 </ul>
             </div>
@@ -31,223 +31,25 @@
         <section class="container">
             <div class="tenders__cart">
                 <div class="tenders__list">
-
+                  @foreach ($tenders as $tender)
                     <div class="tenders__item">
-                        <a href="tenders_in.html">
+                        <a href="{{ route('tender', $tender->{'slug_' . app()->getLocale()}) }}">
                             <h4 class="tenders__data">
-                                12.04.2022
+                                {{  date('d.m.Y', strtotime($tender->created_at)) }}
                             </h4>
 
                             <h2 class="tenders__title__h2">
-                                Ut enim ad minim veniam, quis nostrud
+                                {{ $tender->{'title_' . app()->getLocale()} }}
                             </h2>
 
                             <div class="tenders__text">
                                 <p>
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                    {!! $tender->{'content_' . app()->getLocale()} !!}
                                 </p>
                             </div>
                         </a>
                     </div>
-
-                    <div class="tenders__item">
-                        <a href="tenders_in.html">
-                            <h4 class="tenders__data">
-                                12.04.2022
-                            </h4>
-
-                            <h2 class="tenders__title__h2">
-                                Exercitation ullamco laboris nisi ut aliquip ex ea
-                            </h2>
-
-                            <div class="tenders__text">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tenders__item">
-                        <a href="tenders_in.html">
-                            <h4 class="tenders__data">
-                                12.04.2022
-                            </h4>
-
-                            <h2 class="tenders__title__h2">
-                                Duis aute irure dolor in reprehenderit in voluptate
-                            </h2>
-
-                            <div class="tenders__text">
-                                <p>
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tenders__item">
-                        <a href="tenders_in.html">
-                            <h4 class="tenders__data">
-                                12.04.2022
-                            </h4>
-
-                            <h2 class="tenders__title__h2">
-                                Ut enim ad minim veniam, quis nostrud
-                            </h2>
-
-                            <div class="tenders__text">
-                                <p>
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tenders__item">
-                        <a href="tenders_in.html">
-                            <h4 class="tenders__data">
-                                12.04.2022
-                            </h4>
-
-                            <h2 class="tenders__title__h2">
-                                Exercitation ullamco laboris nisi ut aliquip ex ea
-                            </h2>
-
-                            <div class="tenders__text">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tenders__item">
-                        <a href="tenders_in.html">
-                            <h4 class="tenders__data">
-                                12.04.2022
-                            </h4>
-
-                            <h2 class="tenders__title__h2">
-                                Duis aute irure dolor in reprehenderit in voluptate
-                            </h2>
-
-                            <div class="tenders__text">
-                                <p>
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tenders__item">
-                        <a href="tenders_in.html">
-                            <h4 class="tenders__data">
-                                12.04.2022
-                            </h4>
-
-                            <h2 class="tenders__title__h2">
-                                Ut enim ad minim veniam, quis nostrud
-                            </h2>
-
-                            <div class="tenders__text">
-                                <p>
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tenders__item">
-                        <a href="tenders_in.html">
-                            <h4 class="tenders__data">
-                                12.04.2022
-                            </h4>
-
-                            <h2 class="tenders__title__h2">
-                                Exercitation ullamco laboris nisi ut aliquip ex ea
-                            </h2>
-
-                            <div class="tenders__text">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tenders__item">
-                        <a href="tenders_in.html">
-                            <h4 class="tenders__data">
-                                12.04.2022
-                            </h4>
-
-                            <h2 class="tenders__title__h2">
-                                Duis aute irure dolor in reprehenderit in voluptate
-                            </h2>
-
-                            <div class="tenders__text">
-                                <p>
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tenders__item">
-                        <a href="tenders_in.html">
-                            <h4 class="tenders__data">
-                                12.04.2022
-                            </h4>
-
-                            <h2 class="tenders__title__h2">
-                                Ut enim ad minim veniam, quis nostrud
-                            </h2>
-
-                            <div class="tenders__text">
-                                <p>
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tenders__item">
-                        <a href="tenders_in.html">
-                            <h4 class="tenders__data">
-                                12.04.2022
-                            </h4>
-
-                            <h2 class="tenders__title__h2">
-                                Exercitation ullamco laboris nisi ut aliquip ex ea
-                            </h2>
-
-                            <div class="tenders__text">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tenders__item">
-                        <a href="tenders_in.html">
-                            <h4 class="tenders__data">
-                                12.04.2022
-                            </h4>
-
-                            <h2 class="tenders__title__h2">
-                                Duis aute irure dolor in reprehenderit in voluptate
-                            </h2>
-
-                            <div class="tenders__text">
-                                <p>
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
+                    @endforeach
                 </div>
 
                 <ul class="news__pagination">
