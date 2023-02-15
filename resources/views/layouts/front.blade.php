@@ -144,13 +144,13 @@
                                             </li>
 
                                             <li>
-                                                <a href="{{ route('NormsStatements') }}" class="header__bottom__link">
+                                                <a href="{{ route('normsStatements') }}" class="header__bottom__link">
                                                     Нормативы, акты
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="{{ route('DepartmentsStaffs') }}" class="header__bottom__link">
+                                                <a href="{{ route('departmentsStaffs') }}" class="header__bottom__link">
                                                     Отделы и Сотрудники
                                                 </a>
                                             </li>
@@ -166,13 +166,13 @@
 
                                         <ul class="header__bottom__none__menu">
                                             <li>
-                                                <a href="FacultyPracticalDiplomacy.html" class="header__bottom__link">
+                                                <a href="{{ route('faculty') }}" class="header__bottom__link">
                                                     Факультет переподготовки
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="FacultyPracticalDiplomacy.html" class="header__bottom__link">
+                                                <a href="{{ route('faculty') }}" class="header__bottom__link">
                                                     Факультет практической дипломатии
                                                 </a>
                                             </li>
@@ -180,13 +180,13 @@
 
                                         <ul class="header__bottom__none__menu">
                                             <li>
-                                                <a href="photoGallery.html" class="header__bottom__link">
+                                                <a href="{{ route('photogallerys') }}" class="header__bottom__link">
                                                     Фотогалерея
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="videoGallery.html" class="header__bottom__link">
+                                                <a href="{{ route('videoGallery') }}" class="header__bottom__link">
                                                     Видеогалерея
                                                 </a>
                                             </li>
@@ -194,13 +194,13 @@
 
                                         <ul class="header__bottom__none__menu">
                                             <li>
-                                                <a href="vacancies.html" class="header__bottom__link">
+                                                <a href="{{ route('jobVacancy') }}" class="header__bottom__link">
                                                     Вакансии
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="e_reception.html " class="header__bottom__link">
+                                                <a href="{{ route('E_reception') }}" class="header__bottom__link">
                                                     Электронная приемная
                                                 </a>
                                             </li>
@@ -218,7 +218,7 @@
                                         <ul class="header__bottom__none__menu">
 
                                             <li>
-                                                <a href="Programmes.html" class="header__bottom__link">
+                                                <a href="{{ route('programmes') }}" class="header__bottom__link">
                                                     Programmes
                                                 </a>
                                             </li>
@@ -259,7 +259,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="research.html" class="header__bottom__link">research</a>
+                                    <a href="{{ route('research') }}" class="header__bottom__link">research</a>
                                 </li>
 
                                 <li>
@@ -298,30 +298,28 @@
                         </section>
 
                         <section class="header__ru__list__caer">
-
-                            <!-- language start -->
+                             <!-- language start -->
 
                             <div class="header__ru">
+                                <ul>
 
                                 <div class="header__ru_cart dropdown-trigger"data-target='dropdown1'>
-                                    <a data-target='dropdown1' class="header__en__link">Ru</a>
+                                    <a data-target='dropdown1' class="header__en__link">{{ strtoupper(app()->getLocale()) }}</a>
                                     <span><i class="fas fa-angle-down"></i></span>
                                 </div>
 
                                 <div class="header__ru_none dropdown-content" id='dropdown1'>
-                                    <div class="header__ru_list active">
-                                        <a href="#!-1" class="header__en__link">Ru</a>
-                                    </div>
-
-                                    <div class="header__ru_list">
-                                        <a href="#!-2" class="header__en__link">En</a>
-                                    </div>
-
-                                    <div class="header__ru_list">
-                                        <a href="#!-3" class="header__en__link">O’z</a>
-                                    </div>
+                                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                        @if($localeCode != app()->getLocale())
+                                        <div class="header__ru_list @if($localeCode == app()->getLocale()) active @endif">
+                                            <a rel="alternate" class="header__en__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                {{ strtoupper($localeCode) }}
+                                            </a>
+                                        </div>
+                                        @endif
+                                    @endforeach
                                 </div>
-
+                            </ul>
                             </div>
 
                             <!-- language start -->

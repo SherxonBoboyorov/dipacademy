@@ -13,7 +13,7 @@
                         <a href="{{ route('/') }}" class="academy__menu__link">Main</a>
                     </li>
                     <li>
-                        <a href="command_in.html" class="academy__menu__link">КОМАНДА</a>
+                        <a class="academy__menu__link">КОМАНДА</a>
                     </li>
                 </ul>
             </div>

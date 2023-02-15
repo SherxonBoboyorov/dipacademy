@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('fullname');
-            $table->Time('date_of_birth');
+            $table->date('date_of_birth');
             $table->string('passport_data');
             $table->text('address');
             $table->text('index');

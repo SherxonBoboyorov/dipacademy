@@ -4,16 +4,16 @@
 
     <!-- academy start -->
 
-    <div class="academy" style="background-image:url(foto/academy_fon.png)">
+    <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
                 <h2 class="academy__title__h2">E-reception</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="index.html" class="academy__menu__link">Main</a>
+                        <a href="{{ route('/') }}" class="academy__menu__link">Main</a>
                     </li>
                     <li>
-                        <a href="e_reception.html" class="academy__menu__link">E-reception</a>
+                        <a class="academy__menu__link">E-reception</a>
                     </li>
                 </ul>
             </div>
@@ -24,19 +24,21 @@
 
 
     <!-- E-reception start -->
+    @include('alert')
 
     <div class="e_reception">
         <section class="container">
             <div class="e_reception__cart">
-                <form action="#!" class="e_reception__form">
-                    <input type="text" placeholder="ФИО" class="e_reception__input">
-                    <input type="date" placeholder="Дата рождения" class="e_reception__input">
-                    <input type="text" placeholder="Паспортные данные" class="e_reception__input">
-                    <input type="text" placeholder="Адрес" class="e_reception__input">
-                    <input type="text" placeholder="Индекс" class="e_reception__input">
-                    <input type="email" placeholder="Электронная почта" class="e_reception__input">
-                    <input type="tel" placeholder="Телефон" class="e_reception__input">
-                    <textarea class="e_reception__textarea" placeholder="Текст вопроса"></textarea>
+                <form action="{{ route('quotecallbackSave') }}" method="POST" class="e_reception__form">
+                    @csrf
+                    <input type="text" name="fullname" placeholder="ФИО" class="e_reception__input" required>
+                    <input type="date" name="date_of_birth" placeholder="Дата рождения" class="e_reception__input" required>
+                    <input type="text" name="passport_data" placeholder="Паспортные данные" class="e_reception__input" required>
+                    <input type="text" name="address" placeholder="Адрес" class="e_reception__input" required>
+                    <input type="text" name="index" placeholder="Индекс" class="e_reception__input" required>
+                    <input type="email" name="email" placeholder="Электронная почта" class="e_reception__input" required>
+                    <input type="tel" name="phone_number" placeholder="Телефон" class="e_reception__input" required>
+                    <textarea class="e_reception__textarea" name="question_text" placeholder="Текст вопроса" required></textarea>
                     <label class="input-wrap">
                         <input type="checkbox" class="checkboxNone">
                         <span class="checkmark"></span>

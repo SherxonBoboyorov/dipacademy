@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class NormsStatementController extends Controller
 {
-    public function NormsStatements()
+    public function normsStatements()
     {
         $statements = Statement::orderBy('created_at', 'DESC')->get();
         return view('front.normsstatements', compact(

@@ -4,7 +4,7 @@
 
     <!-- academy start -->
 
-    <div class="academy" style="background-image:url(foto/academy_fon.png)">
+    <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
                 <h2 class="academy__title__h2">Видеогалерея</h2>
@@ -13,7 +13,7 @@
                         <a href="{{ route('/') }}" class="academy__menu__link">Main</a>
                     </li>
                     <li>
-                        <a href="photoGallery.html" class="academy__menu__link">Видеогалерея</a>
+                        <a class="academy__menu__link">Видеогалерея</a>
                     </li>
                 </ul>
             </div>
@@ -31,19 +31,19 @@
     <div class="videoGallery">
         <section class="container">
             <div class="videoGallery__cart">
+                @if ($videos->count() > 0)
+
                 <div class="videoGallery__list">
-
                     <div class="videoGallery__list__item">
-
-                        <a data-fancybox="video-gallery" href="https://youtu.be/21IBTWi1YJU?list=RDLcjoa3hfWWI">
-                            <img class="videoItem" src="foto/photoGallery_1.png" alt="video"/>
+                        <a data-fancybox="video-gallery" href="{{ $videos[0]->frame }}">
+                            <img class="videoItem" src="{{ asset($videos[0]->image) }}" alt="video"/>
                             <!-- play start -->
 
                             <div class="button__min is-play" href="#">
                                 <div class="button-outer-circle has-scale-animation"></div>
                                 <div class="button-outer-circle has-scale-animation has-delay-short"></div>
                                 <div class="button-icon is-play">
-                                    <img class="about_contint_in__video__img__play" alt="All" src="foto/pley.svg">
+                                    <img class="about_contint_in__video__img__play" alt="All" src="{{ asset('front/foto/pley.svg') }}">
                                 </div>
                             </div>
 
@@ -52,21 +52,23 @@
 
                         <section class="videoGallery__item__cart">
                             <h3 class="videoGallery__list__title">
-                                At vero eos et accusamus et iusto
+                                {{ $videos[0]->{'title_' . app()->getLocale()} }}
                             </h3>
                             <h4 class="videoGallery__list__data">
-                                08.04.2022
+                                {{  date('d.m.Y', strtotime($videos[0]->created_at)) }}
                             </h4>
                         </section>
+                        {{-- @endforeach --}}
 
                     </div>
 
                     <div class="videoGallery__menu__video">
+                        @foreach ($videos as $video)
 
                         <div class="videoGallery__item__video active">
-                            <a href="https://youtu.be/21IBTWi1YJU?list=RDLcjoa3hfWWI"></a>
+                            <a href="{{ $video->frame }}"></a>
                             <div class="videoGallery__img__video">
-                                <img class="videoImg" src="foto/photoGallery_1.png" alt="videoGallery">
+                                <img class="videoImg" src="{{ asset($video->image) }}" alt="videoGallery">
 
                                 <!-- play start -->
 
@@ -74,7 +76,7 @@
                                     <div class="button-outer-circle has-scale-animation"></div>
                                     <div class="button-outer-circle has-scale-animation has-delay-short"></div>
                                     <div class="button-icon is-play">
-                                        <img class="about_contint_in__video__img__play" alt="All" src="foto/pley.svg">
+                                        <img class="about_contint_in__video__img__play" alt="All" src="{{ asset('front/foto/pley.svg') }}">
                                     </div>
                                 </div>
 
@@ -83,154 +85,15 @@
                             </div>
 
                             <h4 class="videoGallery__data">
-                                08.04.2022
+                                {{  date('d.m.Y', strtotime($video->created_at)) }}
                             </h4>
 
                             <h3 class="videoGallery__title__h3">
-                                At vero eos et accusamus et iusto
+                                {{ $video->{'title_' . app()->getLocale()} }}
                             </h3>
                         </div>
 
-                        <div class="videoGallery__item__video">
-                            <a href="video/video_2022-12-23_16-09-42.mp4"></a>
-                            <div class="videoGallery__img__video">
-                                <img class="videoImg" src="foto/photoGallery_2.png" alt="videoGallery">
-
-                                <!-- play start -->
-
-                                <div class="button__min is-play" href="#">
-                                    <div class="button-outer-circle has-scale-animation"></div>
-                                    <div class="button-outer-circle has-scale-animation has-delay-short"></div>
-                                    <div class="button-icon is-play">
-                                        <img class="about_contint_in__video__img__play" alt="All" src="foto/pley.svg">
-                                    </div>
-                                </div>
-
-                                <!-- play end -->
-
-                            </div>
-
-                            <h4 class="videoGallery__data">
-                                08.05.2022
-                            </h4>
-
-                            <h3 class="videoGallery__title__h3">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </h3>
-                        </div>
-
-                        <div class="videoGallery__item__video">
-                            <a href="https://youtu.be/tl5sLG8rk6Q?list=RDLcjoa3hfWWI"></a>
-                            <div class="videoGallery__img__video">
-                                <img class="videoImg" src="foto/photoGallery_3.png" alt="videoGallery">
-
-                                <!-- play start -->
-
-                                <div class="button__min is-play" href="#">
-                                    <div class="button-outer-circle has-scale-animation"></div>
-                                    <div class="button-outer-circle has-scale-animation has-delay-short"></div>
-                                    <div class="button-icon is-play">
-                                        <img class="about_contint_in__video__img__play" alt="All" src="foto/pley.svg">
-                                    </div>
-                                </div>
-
-                                <!-- play end -->
-
-                            </div>
-
-                            <h4 class="videoGallery__data">
-                                08.04.2022
-                            </h4>
-
-                            <h3 class="videoGallery__title__h3">
-                                Ut enim ad minim veniam, quis nostrud
-                            </h3>
-                        </div>
-
-                        <div class="videoGallery__item__video">
-                            <a href="https://youtu.be/lmoRXGyR99w?list=RDLcjoa3hfWWI"></a>
-                            <div class="videoGallery__img__video">
-                                <img class="videoImg" src="foto/photoGallery_4.png" alt="videoGallery">
-
-                                <!-- play start -->
-
-                                <div class="button__min is-play" href="#">
-                                    <div class="button-outer-circle has-scale-animation"></div>
-                                    <div class="button-outer-circle has-scale-animation has-delay-short"></div>
-                                    <div class="button-icon is-play">
-                                        <img class="about_contint_in__video__img__play" alt="All" src="foto/pley.svg">
-                                    </div>
-                                </div>
-
-                                <!-- play end -->
-
-                            </div>
-
-                            <h4 class="videoGallery__data">
-                                08.04.2022
-                            </h4>
-
-                            <h3 class="videoGallery__title__h3">
-                                At vero eos et accusamus et iusto
-                            </h3>
-                        </div>
-
-                        <div class="videoGallery__item__video">
-                            <a href="https://youtu.be/cSYfv90UFzI?list=RDLcjoa3hfWWI"></a>
-                            <div class="videoGallery__img__video">
-                                <img class="videoImg" src="foto/photoGallery_5.png" alt="videoGallery">
-
-                                <!-- play start -->
-
-                                <div class="button__min is-play" href="#">
-                                    <div class="button-outer-circle has-scale-animation"></div>
-                                    <div class="button-outer-circle has-scale-animation has-delay-short"></div>
-                                    <div class="button-icon is-play">
-                                        <img class="about_contint_in__video__img__play" alt="All" src="foto/pley.svg">
-                                    </div>
-                                </div>
-
-                                <!-- play end -->
-
-                            </div>
-
-                            <h4 class="videoGallery__data">
-                                08.04.2022
-                            </h4>
-
-                            <h3 class="videoGallery__title__h3">
-                                Lorem ipsum dolor sit amet, consectetur
-                            </h3>
-                        </div>
-
-                        <div class="videoGallery__item__video">
-                            <a href="https://youtu.be/db3R8cz4I4A?list=RDLcjoa3hfWWI"></a>
-                            <div class="videoGallery__img__video">
-                                <img class="videoImg" src="foto/photoGallery_6.png" alt="videoGallery">
-
-                                <!-- play start -->
-
-                                <div class="button__min is-play" href="#">
-                                    <div class="button-outer-circle has-scale-animation"></div>
-                                    <div class="button-outer-circle has-scale-animation has-delay-short"></div>
-                                    <div class="button-icon is-play">
-                                        <img class="about_contint_in__video__img__play" alt="All" src="foto/pley.svg">
-                                    </div>
-                                </div>
-
-                                <!-- play end -->
-
-                            </div>
-
-                            <h4 class="videoGallery__data">
-                                08.04.2022
-                            </h4>
-
-                            <h3 class="videoGallery__title__h3">
-                                Ut enim ad minim veniam, quis nostrud
-                            </h3>
-                        </div>
-
+                        @endforeach
                     </div>
 
                     <ul class="news__pagination">
@@ -268,8 +131,8 @@
                             <a href="#!" class="news__pagination__next"><i class="fas fa-angle-double-right"></i></a>
                         </li>
                     </ul>
-
                 </div>
+                @endif
             </div>
         </section>
     </div>

@@ -32,7 +32,7 @@
                     @foreach ($departments as $department)
 
                     <div class="departmentsStaff__item">
-                        <a href="{{ route('DepartmentsStaff', $department->{'slug_' . app()->getLocale()}) }}">
+                        <a href="{{ route('departmentsStaff', $department->{'slug_' . app()->getLocale()}) }}">
                             <h2 class="departmentsStaff__title__h2">1</h2>
                             <h4 class="departmentsStaff__title__h4">
                                 {{ $department->{'title_' . app()->getLocale()} }}

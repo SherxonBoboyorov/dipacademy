@@ -4,16 +4,16 @@
 
     <!-- academy start -->
 
-    <div class="academy" style="background-image:url(foto/academy_fon.png)">
+    <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
                 <h2 class="academy__title__h2">Фотогалерея</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="index.html" class="academy__menu__link">Main</a>
+                        <a href="{{ route('/') }}" class="academy__menu__link">Main</a>
                     </li>
                     <li>
-                        <a href="photoGallery.html" class="academy__menu__link">Фотогалерея</a>
+                        <a class="academy__menu__link">Фотогалерея</a>
                     </li>
                 </ul>
             </div>
@@ -29,152 +29,23 @@
         <section class="container">
             <div class="photoGallery__cart">
                 <div class="photoGallery__list">
+                    @foreach ($photogallerys as $photogallery)
 
                     <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
+                        <a href="{{ route('photogallery', $photogallery->{'slug_' . app()->getLocale()}) }}">
                             <div class="photoGallery__img">
-                                <img src="foto/photoGallery_1.png" alt="photoGallery">
+                                <img src="{{ asset($photogallery->image) }}" alt="photoGallery">
                                 <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
+                                <h4 class="photoGallery__data">{{  date('d.m.Y', strtotime($photogallery->created_at)) }}</h4>
                             </div>
 
-                            <h3 class="photoGallery__title__h3">At vero eos et accusamus et iusto</h3>
+                            <h3 class="photoGallery__title__h3">{{ $photogallery->{'title_' . app()->getLocale()} }}</h3>
                         </a>
                     </div>
-
-                    <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
-                            <div class="photoGallery__img">
-                                <img src="foto/photoGallery_2.png" alt="photoGallery">
-                                <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
-                            </div>
-
-                            <h3 class="photoGallery__title__h3">Lorem ipsum dolor sit amet, consectetur</h3>
-                        </a>
-                    </div>
-
-                    <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
-                            <div class="photoGallery__img">
-                                <img src="foto/photoGallery_3.png" alt="photoGallery">
-                                <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
-                            </div>
-
-                            <h3 class="photoGallery__title__h3">Ut enim ad minim veniam, quis nostrud</h3>
-                        </a>
-                    </div>
-
-                    <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
-                            <div class="photoGallery__img">
-                                <img src="foto/photoGallery_4.png" alt="photoGallery">
-                                <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
-                            </div>
-
-                            <h3 class="photoGallery__title__h3">At vero eos et accusamus et iusto</h3>
-                        </a>
-                    </div>
-
-                    <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
-                            <div class="photoGallery__img">
-                                <img src="foto/photoGallery_5.png" alt="photoGallery">
-                                <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
-                            </div>
-
-                            <h3 class="photoGallery__title__h3">Lorem ipsum dolor sit amet, consectetur</h3>
-                        </a>
-                    </div>
-
-                    <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
-                            <div class="photoGallery__img">
-                                <img src="foto/photoGallery_6.png" alt="photoGallery">
-                                <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
-                            </div>
-
-                            <h3 class="photoGallery__title__h3">Ut enim ad minim veniam, quis nostrud</h3>
-                        </a>
-                    </div>
-
-                    <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
-                            <div class="photoGallery__img">
-                                <img src="foto/photoGallery_1.png" alt="photoGallery">
-                                <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
-                            </div>
-
-                            <h3 class="photoGallery__title__h3">At vero eos et accusamus et iusto</h3>
-                        </a>
-                    </div>
-
-                    <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
-                            <div class="photoGallery__img">
-                                <img src="foto/photoGallery_2.png" alt="photoGallery">
-                                <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
-                            </div>
-
-                            <h3 class="photoGallery__title__h3">Lorem ipsum dolor sit amet, consectetur</h3>
-                        </a>
-                    </div>
-
-                    <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
-                            <div class="photoGallery__img">
-                                <img src="foto/photoGallery_3.png" alt="photoGallery">
-                                <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
-                            </div>
-
-                            <h3 class="photoGallery__title__h3">Ut enim ad minim veniam, quis nostrud</h3>
-                        </a>
-                    </div>
-
-                    <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
-                            <div class="photoGallery__img">
-                                <img src="foto/photoGallery_4.png" alt="photoGallery">
-                                <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
-                            </div>
-
-                            <h3 class="photoGallery__title__h3">At vero eos et accusamus et iusto</h3>
-                        </a>
-                    </div>
-
-                    <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
-                            <div class="photoGallery__img">
-                                <img src="foto/photoGallery_5.png" alt="photoGallery">
-                                <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
-                            </div>
-
-                            <h3 class="photoGallery__title__h3">Lorem ipsum dolor sit amet, consectetur</h3>
-                        </a>
-                    </div>
-
-                    <div class="photoGallery__item">
-                        <a href="photoGallery_in.html">
-                            <div class="photoGallery__img">
-                                <img src="foto/photoGallery_6.png" alt="photoGallery">
-                                <span><i class="fas fa-eye"></i></span>
-                                <h4 class="photoGallery__data">08.04.2022</h4>
-                            </div>
-
-                            <h3 class="photoGallery__title__h3">Ut enim ad minim veniam, quis nostrud</h3>
-                        </a>
-                    </div>
-
+                    {{-- {{ $photogallerys->links("vendor.pagination.pagination")}} --}}
+                    @endforeach
                 </div>
+
 
                 <ul class="news__pagination">
                     <li>
@@ -211,6 +82,9 @@
                         <a href="#!" class="news__pagination__next"><i class="fas fa-angle-double-right"></i></a>
                     </li>
                 </ul>
+
+
+
             </div>
         </section>
     </div>

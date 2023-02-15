@@ -14,7 +14,7 @@
                         <a href="{{ route('/') }}" class="academy__menu__link">Main</a>
                     </li>
                     <li>
-                        <a href="TheAcademy.html" class="academy__menu__link">The academy</a>
+                        <a class="academy__menu__link">The academy</a>
                     </li>
                 </ul>
             </div>

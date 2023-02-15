@@ -43,6 +43,13 @@ use App\Http\Controllers\Front\LeaderController;
 use App\Http\Controllers\Front\NormsStatementController;
 use App\Http\Controllers\Front\DepartmentsStaffController;
 use App\Http\Controllers\Front\CommandController;
+use App\Http\Controllers\Front\PhotoGalleryController;
+use App\Http\Controllers\Front\VideoGalleryController;
+use App\Http\Controllers\Front\JobVacancyController;
+use App\Http\Controllers\Front\EReceptionController;
+use App\Http\Controllers\Front\FacultyDiplomacyController;
+use App\Http\Controllers\Front\ProgrammerController;
+use App\Http\Controllers\Front\ResearcController;
 
 
 Auth::routes();
@@ -94,10 +101,21 @@ Route::group(
         Route::get('about', [AboutController::class, 'about'])->name('about');
         Route::get('advisory', [AdvisoryController::class, 'advisory'])->name('advisory');
         Route::get('leadership', [LeaderController::class, 'leadership'])->name('leadership');
-        Route::get('NormsStatements', [NormsStatementController::class, 'NormsStatements'])->name('NormsStatements');
-        Route::get('DepartmentsStaffs', [DepartmentsStaffController::class, 'list'])->name('DepartmentsStaffs');
-        Route::get('DepartmentsStaffs/{slug}', [DepartmentsStaffController::class, 'show'])->name('DepartmentsStaff');
+        Route::get('normsStatements', [NormsStatementController::class, 'normsStatements'])->name('normsStatements');
+        Route::get('departmentsStaffs', [DepartmentsStaffController::class, 'list'])->name('departmentsStaffs');
+        Route::get('departmentsStaffs/{slug}', [DepartmentsStaffController::class, 'show'])->name('departmentsStaff');
         Route::get('team/{slug}', [CommandController::class, 'team'])->name('team');
+        Route::get('photogallerys', [PhotoGalleryController::class, 'list'])->name('photogallerys');
+        Route::get('photogallerys/{slug}', [PhotoGalleryController::class, 'show'])->name('photogallery');
+        Route::get('videoGallery', [VideoGalleryController::class, 'videoGallery'])->name('videoGallery');
+        Route::get('jobVacancy', [JobVacancyController::class, 'jobVacancy'])->name('jobVacancy');
+        Route::get('E_reception', [EReceptionController::class, 'E_reception'])->name('E_reception');
+        Route::post('save_quotecallbackSave', [EReceptionController::class, 'quotecallbackSave'])->name('quotecallbackSave');
+        Route::get('faculty', [FacultyDiplomacyController::class, 'faculty'])->name('faculty');
+        Route::get('programmes', [ProgrammerController::class, 'programmes'])->name('programmes');
+        Route::get('programmesins/{slug}', [ProgrammerController::class, 'show'])->name('programmesin');
+        Route::get('research', [ResearcController::class, 'research'])->name('research');
+
 
 
  });

@@ -5,16 +5,16 @@
 
     <!-- academy start -->
 
-    <div class="academy" style="background-image:url(foto/academy_fon.png)">
+    <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">Programmes</h2>
+                <h2 class="academy__title__h2">{{ $programmesin->{'title_' . app()->getLocale()} }}</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="Programmes.html" class="academy__menu__link">Programmes</a>
+                        <a href="{{ route('programmes') }}" class="academy__menu__link">Programmes</a>
                     </li>
                     <li>
-                        <a href="programmes_in.html" class="academy__menu__link">Programmes</a>
+                        <a class="academy__menu__link">{{ $programmesin->{'title_' . app()->getLocale()} }}</a>
                     </li>
                 </ul>
             </div>
@@ -33,45 +33,44 @@
                 <div class="programmes_in__list">
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Course type:</h4>
-                        <h3 class="programmes_in__title__h3">Single honours</h3>
+                        <h3 class="programmes_in__title__h3">{{ $programmesin->{'course_type_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Delivery mode:</h4>
-                        <h3 class="programmes_in__title__h3">Classroom</h3>
+                        <h3 class="programmes_in__title__h3">{{ $programmesin->{'delivery_mode_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Study mode:</h4>
-                        <h3 class="programmes_in__title__h3">Full time</h3>
+                        <h3 class="programmes_in__title__h3">{{ $programmesin->{'study_mode_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Duration:</h4>
-                        <h3 class="programmes_in__title__h3">One years</h3>
+                        <h3 class="programmes_in__title__h3">{{ $programmesin->{'duration_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Start date:</h4>
-                        <h3 class="programmes_in__title__h3">September 2022</h3>
+                        <h3 class="programmes_in__title__h3">{{ $programmesin->{'start_date_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Application deadline:</h4>
-                        <h3 class="programmes_in__title__h3">26 January 2022</h3>
+                        <h3 class="programmes_in__title__h3">{{ $programmesin->{'application_deadline_' . app()->getLocale()} }}</h3>
                     </div>
                 </div>
 
                 <div class="programmes_in__item">
-                    <h2 class="about__title__h2">Описание курса</h2>
                     <div class="academy_contint__text clearfix">
                         <p>
-                            Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+                            {!! $programmesin->{'content_' . app()->getLocale()} !!}
                         </p>
                     </div>
                 </div>
 
-                <div class="programmes_in__item">
+                {{-- <div class="programmes_in__item">
                     <h2 class="about__title__h2">Lorem ipsum dolor sit amet</h2>
                     <div class="academy_contint__text clearfix">
                         <p>
@@ -80,9 +79,9 @@
                             At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
                         </p>
                     </div>
-                </div>
+                </div> --}}
 
-                <div class="programmes_in__video">
+                {{-- <div class="programmes_in__video">
                     <p class="text-center">
                         <a data-fancybox href="video/video_2022-12-23_16-09-42.mp4">
                             <section>
@@ -111,8 +110,8 @@
                             </section>
                         </a>
                     </p>
-                </div>
-
+                </div> --}}
+{{--
                 <div class="programmes_in__item clearfix">
 
                     <div class="programmes_in__img">
@@ -125,7 +124,7 @@
                             At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
                         </p>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="programmes_in__item">
                     <h2 class="about__title__h2">Отзывы выпускников</h2>
