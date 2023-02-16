@@ -53,7 +53,7 @@
 
                             <li>
                                 <h4 class="news_in__data">Просмотры:</h4>
-                                <h3 class="news_in__title__h3">2 657</h3>
+                                <h3 class="news_in__title__h3">{{ $article->views }}</h3>
                             </li>
 
                             <li>
@@ -82,23 +82,24 @@
                         <h3 class="news_in__similar__title">Похожие новости</h3>
 
                         <ul class="news_in__similar__list">
+                          @foreach ($articles as $article)
                             <li>
-                                <a href="news_in.html">
+                                <a href="{{ route('article', $article->{'slug_' . app()->getLocale()}) }}">
                                     <div class="news_in__similar__img">
-                                        <img src="foto/news_1.png" alt="similar">
+                                        <img src="{{ asset($article->image) }}" alt="similar">
                                     </div>
 
                                     <div>
                                         <h2 class="news_in__similar__name">
-                                            At vero eos et accusamus et iusto
+                                            {{ $article->{'title_' . app()->getLocale()} }}
                                         </h2>
                                         <h4 class="news_in__similar__data">
-                                            24.04.2022
+                                            {{  date('d.m.Y', strtotime($article->created_at)) }}
                                         </h4>
                                     </div>
                                 </a>
                             </li>
-
+                            @endforeach
                         </ul>
                     </aside>
 

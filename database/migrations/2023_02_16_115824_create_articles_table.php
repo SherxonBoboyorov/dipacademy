@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-
+            
             $table->unsignedBigInteger('category_id')->nullable()->unsigned();
             $table->foreign('category_id')
             ->references('id')
@@ -31,6 +31,8 @@ return new class extends Migration
             $table->string('slug_ru');
             $table->string('slug_uz');
             $table->string('slug_en');
+
+            $table->integer('views')->default(0);
 
             $table->text('content_ru');
             $table->text('content_uz');

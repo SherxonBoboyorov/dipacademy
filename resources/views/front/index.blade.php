@@ -42,7 +42,7 @@
                             </p>
                         </div>
 
-                        <a href="{{ route('about') }}" class="about__link">More <span><i class="fas fa-chevron-right"></i></span></a>
+                        <a href="{{ route('about') }}" class="about__link">@lang('main.more') <span><i class="fas fa-chevron-right"></i></span></a>
                     </div>
 
                     <div class="about__item">
@@ -125,7 +125,7 @@
                             </p>
                         </div>
 
-                        <a href="{{ route('about') }}" class="magistracy__link">Подробнее</a>
+                        <a href="{{ route('about') }}" class="magistracy__link">@lang('main.more')</a>
                     </div>
                     @endforeach
                 </div>
@@ -144,67 +144,21 @@
                 <h2 class="about__title__h2">all programmes</h2>
 
                 <div class="all_programmes__list">
-
-                    <div class="all_programmes__item">
+                    @foreach ($programmesmasterins as $programmesmasterin)
+                     <div class="all_programmes__item">
                         <h3 class="all_programmes__title__h3">
-                            <span>01.</span>Programmes for government sector
+                            <span>0{{ $programmesmasterin->id}}.</span>{{ $programmesmasterin->{'title_' . app()->getLocale()} }}
                         </h3>
 
                         <div class="all_programmes__text">
                             <p>
-                               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                               Duration: 1 month
+                                {!! $programmesmasterin->{'content_' . app()->getLocale()} !!}
                             </p>
                         </div>
 
-                        <a href="programmes_in.html" class="all_programmes__link"><i class="fas fa-chevron-right"></i></a>
+                        <a href="{{ route('programmesmasterin', $programmesmasterin->id) }}" class="all_programmes__link"><i class="fas fa-chevron-right"></i></a>
                     </div>
-
-                    <div class="all_programmes__item">
-                        <h3 class="all_programmes__title__h3">
-                            <span>02.</span>Programmes for the private sector
-                        </h3>
-
-                        <div class="all_programmes__text">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                Duration: 2 months
-                            </p>
-                        </div>
-
-                        <a href="programmes_in.html" class="all_programmes__link"><i class="fas fa-chevron-right"></i></a>
-                    </div>
-
-                    <div class="all_programmes__item">
-                        <h3 class="all_programmes__title__h3">
-                            <span>03.</span>Programmes for government sector
-                        </h3>
-
-                        <div class="all_programmes__text">
-                            <p>
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                                Duration: 3 months
-                            </p>
-                        </div>
-
-                        <a href="programmes_in.html" class="all_programmes__link"><i class="fas fa-chevron-right"></i></a>
-                    </div>
-
-                    <div class="all_programmes__item">
-                        <h3 class="all_programmes__title__h3">
-                            <span>04.</span>Programmes for the private sector
-                        </h3>
-
-                        <div class="all_programmes__text">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                Duration: 4 months
-                            </p>
-                        </div>
-
-                        <a href="programmes_in.html" class="all_programmes__link"><i class="fas fa-chevron-right"></i></a>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -218,7 +172,7 @@
     <div class="choose_academy">
         <section class="container">
             <div class="choose_academy__cart">
-                <h2 class="about__title__h2">why to choose the academy</h2>
+                <h2 class="about__title__h2">@lang('main.why_to_choose_the_academy')</h2>
 
                 <div class="choose_academy__list">
                    @foreach ($whydipacademies as $whydipacademy)
@@ -246,9 +200,9 @@
         <section class="container">
             <div class="news__cart">
                 <div class="news__cart__list">
-                    <h2 class="about__title__h2">News</h2>
+                    <h2 class="about__title__h2">@lang('main.news')</h2>
                     <a href="{{ route('articles') }}" class="news__all__link">
-                        All news <span><i class="fas fa-chevron-right"></i></span>
+                        @lang('main.all_news') <span><i class="fas fa-chevron-right"></i></span>
                     </a>
                 </div>
 
@@ -265,7 +219,7 @@
                                 <h4 class="news__data">{{  date('d.m.Y', strtotime($article->created_at)) }}</h4>
                                 <h5 class="news__eyes">
                                     <span><i class="fas fa-eye"></i></span>
-                                    2 657
+                                    {{ $article->views }}
                                 </h5>
                             </div>
 
@@ -294,7 +248,7 @@
     <div class="our_partners">
         <section class="container">
             <div class="our_partners__cart">
-                <h2 class="about__title__h2">our partners</h2>
+                <h2 class="about__title__h2">@lang('main.our_partners')</h2>
 
                 <div class="our_partners__list owl-carousel">
                   @foreach ($ourpartners as $ourpartner)

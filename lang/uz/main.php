@@ -1,0 +1,42 @@
+<?php
+
+// Uzbek
+return [
+    'video_gallery' => 'Video galereya',
+    'main' => 'Bosh sahifa',
+    'the_academy' => 'Akademiya',
+    'academy' => 'AKADEMİYA',
+    'supervisory_board' => 'Kuzatuv kengashi',
+    'management' => 'Boshqaruv',
+    'regulations_acts' => 'Nizomlar, aktlar',
+    'departments_and_employees' => 'Bo\'limlar va xodimlar',
+    'science_council' => 'Ilmiy kengash',
+    'faculty_of_retraining' => 'Qayta tayyorlash fakulteti',
+    'daculty_of_practical_diplomacy' => 'Amaliy diplomatiya fakulteti',
+    'photo_gallery' => 'Fotogalereya',
+    'jobs' => 'Bo\'sh ish o\'rinlari',
+    'electronic_reception' => 'Elektron qabul qilish',
+    'programmes' => 'Dasturlar',
+    'master' => 'Usta',
+    'admission' => 'Qabul',
+    'research' => 'tadqiqot',
+    'international' => 'Xalqaro',
+    'news' => 'Yangiliklar',
+    'tenders' => 'Tenderlar',
+    'contacts' => 'kontaktlar',
+    'all_rights_reserved' => 'Barcha huquqlar himoyalangan',
+    'mobile_version' => 'mobil versiya',
+    'site_map' => 'sayt xaritasi',
+    'type_search_term_here' => 'SHU YERDA QIDIRISH SO\'ZINI YOZING',
+    'normal_design' => 'Oddiy dizayn',
+    'black_and_white_design' => 'Qora va oq dizayn',
+    'font_size' => 'Shrift hajmi',
+    'View' =>'Ko\'rinish',
+    'special_functions' => 'Maxsus imkoniyatlar',
+    'search' => 'Qidirmoq',
+    'more' => 'Ko\'proq',
+    'all_news' => 'Barcha Yangiliklar',
+    'our_partners' => 'bizning hamkorlarimiz',
+    'why_to_choose_the_academy' => 'Nima uchun akademiyani tanlash kerak'
+
+];

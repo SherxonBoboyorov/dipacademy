@@ -37,12 +37,12 @@
                                 <div class="header__accessibility">
                                     <span class="header__accessibility__icon" id="haAccessibilityIcon">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--mdi" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"></path></svg>
-                                        Special functions
+                                        @lang('main.special_functions')
                                     </span>
 
                                     <div class="header__accessibility__dropdown ha__dropdown">
                                         <div class="ha__dropdown__content">
-                                            <h4 class="ha__title">View:</h4>
+                                            <h4 class="ha__title">@lang('main.view'):</h4>
                                             <div class="custom-form-group">
                                                 <div class="custom-form-check">
                                                     <input
@@ -53,7 +53,7 @@
                                                         value="normalDesign"
                                                     />
                                                     <label class="custom-form-check-label" for="normalDesign">
-                                                        Normal design
+                                                        @lang('main.normal_design')
                                                     </label>
                                                 </div>
 
@@ -66,12 +66,12 @@
                                                         value="blackAndWhiteDesign"
                                                     />
                                                     <label class="custom-form-check-label" for="blackAndWhiteDesign">
-                                                        Black and white design
+                                                        @lang('main.black_and_white_design')
                                                     </label>
                                                 </div>
                                             </div>
 
-                                            <h4 class="ha__title">Font size:</h4>
+                                            <h4 class="ha__title">@lang('main.font_size'):</h4>
                                             <div class="ha__btn-group">
                                                 <button id="fontSizeMin" class="ha_btn">A-</button>
                                                 <button id="fontSizeDefault" class="ha_btn">A</button>
@@ -85,21 +85,21 @@
                             <li>
                                 <div id="mobileVersion" class="mobile-version">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M16 18H7V4h9m-4.5 18a1.5 1.5 0 0 1-1.5-1.5a1.5 1.5 0 0 1 1.5-1.5a1.5 1.5 0 0 1 1.5 1.5a1.5 1.5 0 0 1-1.5 1.5m4-21h-8A2.5 2.5 0 0 0 5 3.5v17A2.5 2.5 0 0 0 7.5 23h8a2.5 2.5 0 0 0 2.5-2.5v-17A2.5 2.5 0 0 0 15.5 1z" fill="currentColor"></path></svg>
-                                    mobile version
+                                    @lang('main.mobile_version')
                                 </div>
                             </li>
 
                             <li>
                                 <a href="#!" class="header__top__menu__link">
                                     <span><i class="fas fa-sitemap"></i></span>
-                                    Site map
+                                    @lang('main.site_map')
                                 </a>
                             </li>
                         </ul>
 
                         <a href="#modal1" class="header__top__search modal-trigger">
                             <span><i class="fas fa-search"></i></span>
-                            TYPE SEARCH TERM HERE
+                            @lang('main.type_search_term_here')
                         </a>
                     </div>
                 </section>
@@ -118,7 +118,7 @@
                             <ul class="header__bottom__menu">
                                 <li>
                                     <h4 class="header__bottom__links">
-                                        The Academy
+                                        @lang('main.the_academy')
                                         <span><i class="fas fa-chevron-down"></i></span>
                                     </h4>
 
@@ -127,37 +127,37 @@
 
                                             <li>
                                                 <a href="{{ route('about') }}" class="header__bottom__link">
-                                                    АКАДЕМИЯ
+                                                    @lang('main.academy')
                                                 </a>
                                             </li>
 
                                             <li>
                                                 <a href="{{ route('advisory') }}" class="header__bottom__link">
-                                                    Наблюдательный совет
+                                                    @lang('main.supervisory_board')
                                                 </a>
                                             </li>
 
                                             <li>
                                                 <a href="{{ route('leadership') }}" class="header__bottom__link">
-                                                    Руководство
+                                                    @lang('main.management')
                                                 </a>
                                             </li>
 
                                             <li>
                                                 <a href="{{ route('normsStatements') }}" class="header__bottom__link">
-                                                    Нормативы, акты
+                                                    @lang('main.regulations_acts')
                                                 </a>
                                             </li>
 
                                             <li>
                                                 <a href="{{ route('departmentsStaffs') }}" class="header__bottom__link">
-                                                    Отделы и Сотрудники
+                                                    @lang('main.departments_and_employees')
                                                 </a>
                                             </li>
 
                                             <li>
                                                 <a href="#!" class="header__bottom__link">
-                                                    Научный совет
+                                                    @lang('main.science_council')
                                                 </a>
                                             </li>
 
@@ -167,13 +167,13 @@
                                         <ul class="header__bottom__none__menu">
                                             <li>
                                                 <a href="{{ route('faculty') }}" class="header__bottom__link">
-                                                    Факультет переподготовки
+                                                    @lang('main.faculty_of_retraining')
                                                 </a>
                                             </li>
 
                                             <li>
                                                 <a href="{{ route('faculty') }}" class="header__bottom__link">
-                                                    Факультет практической дипломатии
+                                                    @lang('main.daculty_of_practical_diplomacy')
                                                 </a>
                                             </li>
                                         </ul>
@@ -181,13 +181,13 @@
                                         <ul class="header__bottom__none__menu">
                                             <li>
                                                 <a href="{{ route('photogallerys') }}" class="header__bottom__link">
-                                                    Фотогалерея
+                                                    @lang('main.photo_gallery')
                                                 </a>
                                             </li>
 
                                             <li>
                                                 <a href="{{ route('videoGallery') }}" class="header__bottom__link">
-                                                    Видеогалерея
+                                                    @lang('main.video_gallery')
                                                 </a>
                                             </li>
                                         </ul>
@@ -195,13 +195,13 @@
                                         <ul class="header__bottom__none__menu">
                                             <li>
                                                 <a href="{{ route('jobVacancy') }}" class="header__bottom__link">
-                                                    Вакансии
+                                                    @lang('main.jobs')
                                                 </a>
                                             </li>
 
                                             <li>
                                                 <a href="{{ route('E_reception') }}" class="header__bottom__link">
-                                                    Электронная приемная
+                                                    @lang('main.electronic_reception')
                                                 </a>
                                             </li>
                                         </ul>
@@ -210,7 +210,7 @@
 
                                 <li>
                                     <h4 class="header__bottom__links">
-                                        Programmes
+                                        @lang('main.programmes')
                                         <span><i class="fas fa-chevron-down"></i></span>
                                     </h4>
 
@@ -219,13 +219,13 @@
 
                                             <li>
                                                 <a href="{{ route('programmes') }}" class="header__bottom__link">
-                                                    Programmes
+                                                    @lang('main.programmes')
                                                 </a>
                                             </li>
 
                                             <li>
                                                 <a href="{{ route('programmesmasters') }}" class="header__bottom__link">
-                                                    Master
+                                                    @lang('main.master')
                                                 </a>
                                             </li>
 
@@ -235,7 +235,7 @@
 
                                 <li>
                                     <h4 class="header__bottom__links">
-                                        admission
+                                        @lang('main.admission')
                                         <span><i class="fas fa-chevron-down"></i></span>
                                     </h4>
 
@@ -244,13 +244,13 @@
 
                                             <li>
                                                 <a href="{{ route('admissions') }}" class="header__bottom__link">
-                                                    Programmes
+                                                    @lang('main.programmes')
                                                 </a>
                                             </li>
 
                                             <li>
                                                 <a href="{{ route('admissionmasters') }}" class="header__bottom__link">
-                                                    Master
+                                                    @lang('main.master')
                                                 </a>
                                             </li>
 
@@ -259,16 +259,16 @@
                                 </li>
 
                                 <li>
-                                    <a href="{{ route('research') }}" class="header__bottom__link">research</a>
+                                    <a href="{{ route('research') }}" class="header__bottom__link">@lang('main.research')</a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ route('international') }}" class="header__bottom__link">international</a>
+                                    <a href="{{ route('international') }}" class="header__bottom__link">@lang('main.international')</a>
                                 </li>
 
                                 <li>
                                     <h4 class="header__bottom__links">
-                                        news
+                                        @lang('main.news')
                                         <span><i class="fas fa-chevron-down"></i></span>
                                     </h4>
 
@@ -277,13 +277,13 @@
 
                                             <li>
                                                 <a href="{{ route('articles') }}" class="header__bottom__link">
-                                                    news
+                                                    @lang('main.news')
                                                 </a>
                                             </li>
 
                                             <li>
                                                 <a href="{{ route('tenders') }}" class="header__bottom__link">
-                                                    Tenders
+                                                    @lang('main.tenders')
                                                 </a>
                                             </li>
 
@@ -292,7 +292,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="{{ route('contacts') }}" class="header__bottom__link">contacts</a>
+                                    <a href="{{ route('contacts') }}" class="header__bottom__link">@lang('main.contacts')</a>
                                 </li>
                             </ul>
                         </section>
@@ -334,7 +334,7 @@
 
         <div class="header__form__cart modal" id="modal1">
             <form action="#!" class="header__form">
-                <input class="header__form__input" placeholder="Поиск" type="search">
+                <input class="header__form__input" placeholder="@lang('main.search')" type="search">
                 <button class="header__form__button" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
@@ -407,25 +407,25 @@
                         <div class="footer__item__list">
                             <ul class="footer__menu">
                                 <li>
-                                    <a href="{{ route('about') }}" class="footer__menu__link">The Academy</a>
+                                    <a href="{{ route('about') }}" class="footer__menu__link"> @lang('main.the_academy')</a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ route('programmes') }}" class="footer__menu__link">Programmes</a>
+                                    <a href="{{ route('programmes') }}" class="footer__menu__link">@lang('main.programmes')</a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ route('admissions') }}" class="footer__menu__link">admission</a>
+                                    <a href="{{ route('admissions') }}" class="footer__menu__link">@lang('main.admission')</a>
                                 </li>
                             </ul>
 
                             <ul class="footer__menu">
                                 <li>
-                                    <a href="{{ route('articles') }}" class="footer__menu__link">news</a>
+                                    <a href="{{ route('articles') }}" class="footer__menu__link">@lang('main.news')</a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ route('contacts') }}" class="footer__menu__link">contacts</a>
+                                    <a href="{{ route('contacts') }}" class="footer__menu__link">@lang('main.contacts')</a>
                                 </li>
                             </ul>
                         </div>
@@ -436,8 +436,8 @@
             <div class="footer__bottom">
                 <section class="container">
                     <div class="footer__bottom__list">
-                        <h4 class="footer__bottom__title__h4">«Diplomatic Academy» Все права защищены</h4>
-                        <h4 class="footer__bottom__title__h4">© Copyright 2022 - Web developed by <a href="http://sos.uz" target="_blank">SOS Group</a></h4>
+                        <h4 class="footer__bottom__title__h4">«Diplomatic Academy» @lang('main.all_rights_reserved')</h4>
+                        <h4 class="footer__bottom__title__h4">© Copyright {{ date("Y") }} - Web developed by <a href="http://sos.uz" target="_blank">SOS Group</a></h4>
                     </div>
                 </section>
             </div>

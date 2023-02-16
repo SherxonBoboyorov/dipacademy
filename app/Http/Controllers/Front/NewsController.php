@@ -20,9 +20,13 @@ class NewsController extends Controller
             ->orWhere('slug_ru', $slug)
             ->orWhere('slug_en', $slug)
             ->first();
+        $article->views += 1;
+        $article->save();
+        $articles = Article::orderBy('created_at', 'DESC')->get();
 
         return view('front.news.show', compact(
             'article',
+            'articles'
         ));
     }
 }

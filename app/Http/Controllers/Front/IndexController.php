@@ -10,6 +10,7 @@ use App\Models\Magistracy;
 use App\Models\WhyDipAcademy;
 use App\Models\Article;
 use App\Models\Ourpartner;
+use App\Models\ProgrammesMasterIn;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -23,6 +24,8 @@ class IndexController extends Controller
         $whydipacademies = WhyDipAcademy::orderBy('created_at', 'DESC')->get();
         $articles = Article::orderBy('created_at', 'DESC')->get();
         $ourpartners = Ourpartner::orderBy('created_at', 'DESC')->get();
+        $programmesmasterins = ProgrammesMasterIn::orderBy('created_at', 'DESC')->get();
+
 
 
         return view('front.index', compact(
@@ -32,7 +35,8 @@ class IndexController extends Controller
             'magistracies',
             'whydipacademies',
             'articles',
-            'ourpartners'
+            'ourpartners',
+            'programmesmasterins'
         ));
     }
 }

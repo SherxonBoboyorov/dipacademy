@@ -10,7 +10,7 @@
                 <h2 class="academy__title__h2">Факультет практической дипломатии</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="{{ route('/') }}" class="academy__menu__link">Main</a>
+                        <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
                         <a class="academy__menu__link">Факультет практической дипломатии</a>

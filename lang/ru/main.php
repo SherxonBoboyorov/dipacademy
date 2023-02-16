@@ -1,0 +1,42 @@
+<?php
+
+// Russian
+return [
+    'video_gallery' => 'Видеогалерея',
+    'main' => 'Главная',
+    'the_academy' => 'Академия',
+    'academy' => 'Академия',
+    'supervisory_board' => 'Наблюдательный совет',
+    'management' => 'Руководство',
+    'regulations_acts' => 'Нормативы, акты',
+    'departments_and_employees' => 'Отделы и Сотрудники',
+    'science_council' => 'Научный совет',
+    'faculty_of_retraining' => 'Факультет переподготовки',
+    'daculty_of_practical_diplomacy' => 'Факультет практической дипломатии',
+    'photo_gallery' => 'Фотогалерея',
+    'jobs' => 'Вакансии',
+    'electronic_reception' => 'Электронная приемная',
+    'programmes' => 'Программы',
+    'master' => 'Мастер',
+    'admission' => 'Поступление',
+    'research' => 'исследовать',
+    'international' => 'Международный',
+    'news' => 'Новости',
+    'tenders' => 'Тендеры',
+    'contacts' => 'контакты',
+    'all_rights_reserved' => 'Все права защищены',
+    'mobile_version' => 'Мобильная версия',
+    'site_map' => 'карта сайта',
+    'type_search_term_here' => 'ВВЕДИТЕ СЛОВО ДЛЯ ПОИСКА ЗДЕСЬ',
+    'normal_design' => 'Нормальный дизайн',
+    'black_and_white_design' => 'Черно-белый дизайн',
+    'font_size' => 'Размер шрифта',
+    'view' => 'Вид',
+    'special_functions' => 'Специальные возможности',
+    'search' => 'Поиск',
+    'more' => 'Подробнее',
+    'all_news' => 'Все новости',
+    'our_partners' => 'наши партнеры',
+    'why_to_choose_the_academy' => 'Почему стоит выбрать академию'
+
+];

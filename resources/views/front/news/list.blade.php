@@ -10,7 +10,7 @@
                 <h2 class="academy__title__h2">News</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="{{ route('/') }}" class="academy__menu__link">Main</a>
+                        <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
                         <a class="academy__menu__link">News</a>
@@ -42,7 +42,7 @@
                                 <h4 class="news__data">{{  date('d.m.Y', strtotime($article->created_at)) }}</h4>
                                 <h5 class="news__eyes">
                                     <span><i class="fas fa-eye"></i></span>
-                                    2 657
+                                    {{ $article->views }}
                                 </h5>
                             </div>
 

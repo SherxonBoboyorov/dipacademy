@@ -21,6 +21,7 @@ class Article extends Model
         'slug_ru',
         'slug_uz',
         'slug_en',
+        'views',
         'content_ru',
         'content_uz',
         'content_en',
