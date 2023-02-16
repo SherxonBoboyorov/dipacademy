@@ -224,7 +224,7 @@
                                             </li>
 
                                             <li>
-                                                <a href="Programmes.html" class="header__bottom__link">
+                                                <a href="{{ route('programmesmasters') }}" class="header__bottom__link">
                                                     Master
                                                 </a>
                                             </li>
@@ -243,13 +243,13 @@
                                         <ul class="header__bottom__none__menu">
 
                                             <li>
-                                                <a href="Programmes.html" class="header__bottom__link">
+                                                <a href="{{ route('admissions') }}" class="header__bottom__link">
                                                     Programmes
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="Programmes.html" class="header__bottom__link">
+                                                <a href="{{ route('admissionmasters') }}" class="header__bottom__link">
                                                     Master
                                                 </a>
                                             </li>
@@ -415,7 +415,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="Programmes.html" class="footer__menu__link">admission</a>
+                                    <a href="{{ route('admissions') }}" class="footer__menu__link">admission</a>
                                 </li>
                             </ul>
 

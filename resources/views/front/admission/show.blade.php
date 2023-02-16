@@ -8,13 +8,13 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">{{ $admissionmasterin->{'title_' . app()->getLocale()} }}</h2>
+                <h2 class="academy__title__h2">{{ $admissionin->{'title_' . app()->getLocale()} }}</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="{{ route('programmesmasters') }}" class="academy__menu__link">Programmes</a>
+                        <a href="{{ route('admissions') }}" class="academy__menu__link">Programmes</a>
                     </li>
                     <li>
-                        <a class="academy__menu__link">{{ $admissionmasterin->{'title_' . app()->getLocale()} }}</a>
+                        <a class="academy__menu__link">{{ $admissionin->{'title_' . app()->getLocale()} }}</a>
                     </li>
                 </ul>
             </div>
@@ -33,39 +33,39 @@
                 <div class="programmes_in__list">
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Course type:</h4>
-                        <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'course_type_' . app()->getLocale()} }}</h3>
+                        <h3 class="programmes_in__title__h3">{{ $admissionin->{'course_type_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Delivery mode:</h4>
-                        <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'delivery_mode_' . app()->getLocale()} }}</h3>
+                        <h3 class="programmes_in__title__h3">{{ $admissionin->{'delivery_mode_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Study mode:</h4>
-                        <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'study_mode_' . app()->getLocale()} }}</h3>
+                        <h3 class="programmes_in__title__h3">{{ $admissionin->{'study_mode_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Duration:</h4>
-                        <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'duration_' . app()->getLocale()} }}</h3>
+                        <h3 class="programmes_in__title__h3">{{ $admissionin->{'duration_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Start date:</h4>
-                        <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'start_date_' . app()->getLocale()} }}</h3>
+                        <h3 class="programmes_in__title__h3">{{ $admissionin->{'start_date_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
                         <h4 class="programmes_in__title__h4">Application deadline:</h4>
-                        <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'application_deadline_' . app()->getLocale()} }}</h3>
+                        <h3 class="programmes_in__title__h3">{{ $admissionin->{'application_deadline_' . app()->getLocale()} }}</h3>
                     </div>
                 </div>
 
                 <div class="programmes_in__item">
                     <div class="academy_contint__text clearfix">
                         <p>
-                            {!! $admissionmasterin->{'content_' . app()->getLocale()} !!}
+                            {!! $admissionin->{'content_' . app()->getLocale()} !!}
                         </p>
                     </div>
                 </div>

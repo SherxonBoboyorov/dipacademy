@@ -54,6 +54,9 @@ use App\Http\Controllers\Front\InternationController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\NewsController;
 use App\Http\Controllers\Front\TeenderController;
+use App\Http\Controllers\Front\ProgramMasterController;
+use App\Http\Controllers\Front\AdmisionController;
+use App\Http\Controllers\Front\AdmisionmasterController;
 
 
 Auth::routes();
@@ -126,6 +129,12 @@ Route::group(
         Route::get('articles/{slug}', [NewsController::class, 'show'])->name('article');
         Route::get('tenders', [TeenderController::class, 'list'])->name('tenders');
         Route::get('tenders/{slug}', [TeenderController::class, 'show'])->name('tender');
+        Route::get('programmesmasters', [ProgramMasterController::class, 'programmesmasters'])->name('programmesmasters');
+        Route::get('programmesmasterins/{id}', [ProgramMasterController::class, 'show'])->name('programmesmasterin');
+        Route::get('admissions', [AdmisionController::class, 'admissions'])->name('admissions');
+        Route::get('admissionins/{slug}', [AdmisionController::class, 'show'])->name('admissionin');
+        Route::get('admissionmasters', [AdmisionmasterController::class, 'admissionmasters'])->name('admissionmasters');
+        Route::get('admissionmasterins/{id}', [AdmisionmasterController::class, 'show'])->name('admissionmasterin');
 
 
 

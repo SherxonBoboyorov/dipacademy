@@ -7,13 +7,13 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">Master</h2>
+                <h2 class="academy__title__h2">Admissions</h2>
                 <ul class="academy__menu">
                     <li>
                         <a href="{{ route('/') }}" class="academy__menu__link">Main</a>
                     </li>
                     <li>
-                        <a class="academy__menu__link">Master</a>
+                        <a class="academy__menu__link">Admissions</a>
                     </li>
                 </ul>
             </div>
@@ -30,27 +30,27 @@
             <div class="programmes_in__cart">
 
                 <div class="academy_contint__text clearfix">
-                    @foreach ($programmesmasters as $programmesmaster)
+                    @foreach ($admissions as $admission)
                     <p>
-                        {!! $programmesmaster->{'content_' . app()->getLocale()} !!}
+                        {!! $admission->{'content_' . app()->getLocale()} !!}
                     </p>
                   @endforeach
                 </div>
 
                 <div class="programmes_for__list">
-                   @foreach ($programmesmasterins as $programmesmasterin)
+                   @foreach ($admissionins as $admissionin)
                     <div class="programmes_for__item">
                         <div class="programmes_for__img">
-                            <img src="{{ asset($programmesmasterin->image) }}" alt="programmes">
+                            <img src="{{ asset($admissionin->image) }}" alt="programmes">
                         </div>
 
                         <div class="programmes_for__text">
                             <p>
-                                {{ $programmesmasterin->{'title_' . app()->getLocale()} }}
+                                {{ $admissionin->{'title_' . app()->getLocale()} }}
                             </p>
                         </div>
 
-                        <a href=" {{ route('programmesmasterin', $programmesmasterin->id) }}" class="programmes_for__link">More <span><i class="fas fa-chevron-right"></i></span></a>
+                        <a href="{{ route('admissionin', $admissionin->{'slug_' . app()->getLocale()}) }}" class="programmes_for__link">More <span><i class="fas fa-chevron-right"></i></span></a>
                     </div>
                     @endforeach
                 </div>

@@ -11,7 +11,7 @@
                 <h2 class="academy__title__h2">{{ $admissionmasterin->{'title_' . app()->getLocale()} }}</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="{{ route('programmesmasters') }}" class="academy__menu__link">Programmes</a>
+                        <a href="{{ route('admissionmasters') }}" class="academy__menu__link">Programmes</a>
                     </li>
                     <li>
                         <a class="academy__menu__link">{{ $admissionmasterin->{'title_' . app()->getLocale()} }}</a>
