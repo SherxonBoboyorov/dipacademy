@@ -35,7 +35,7 @@
 
                         <ul class="departmentsStaff_In__menu">
                             @foreach ($departments as $department)
-                            <li class="active">
+                            <li class="@if ($department->{'slug_' . app()->getLocale()} == $slug) active @endif">
                                 <a href="{{ route('departmentsStaff', $department->{'slug_' . app()->getLocale()}) }}" class="departmentsStaff_In__menu__link">
                                     {{ $department->{'title_' . app()->getLocale()} }}
                                 </a>

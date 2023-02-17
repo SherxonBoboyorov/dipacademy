@@ -174,7 +174,7 @@
                                             </li>
 
                                             <li>
-                                                <a href="{{ route('faculty') }}" class="header__bottom__link">
+                                                <a href="{{ route('faculty', ['id' => 2]) }}" class="header__bottom__link">
                                                     @lang('main.daculty_of_practical_diplomacy')
                                                 </a>
                                             </li>
@@ -335,7 +335,7 @@
         </div>
 
         <div class="header__form__cart modal" id="modal1">
-            <form action="{{ route('front_search') }}" class="header__form" method="POST">
+            <form action="{{ route('search') }}" class="header__form" method="POST">
                 @csrf
                 <input class="header__form__input" name="phrase" placeholder="@lang('main.search')" type="search">
                 <button class="header__form__button" type="submit"><i class="fas fa-search"></i></button>

@@ -7,15 +7,19 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">@lang('main.daculty_of_practical_diplomacy')</h2>
+                @foreach ($facultcetegs as $facultceteg)
+
+                <h2 class="academy__title__h2">{{ $facultceteg->{'title_' . app()->getLocale()} }}</h2>
                 <ul class="academy__menu">
                     <li>
                         <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
-                        <a class="academy__menu__link">@lang('main.daculty_of_practical_diplomacy')</a>
+                        <a class="academy__menu__link">{{ $facultceteg->{'title_' . app()->getLocale()} }}</a>
                     </li>
                 </ul>
+                @endforeach
+
             </div>
         </section>
     </div>
@@ -36,7 +40,7 @@
 
                         <ul class="departmentsStaff_In__menu">
 
-                            <li class="@if ($faculty->id) active @endif">
+                            <li class="@if ($faculty->id == $id) active @endif">
                                 <a href="{{ route('faculty', $faculty->id) }}" class="departmentsStaff_In__menu__link">
                                     {{ $faculty->{'title_' . app()->getLocale()} }}
                                 </a>
@@ -50,7 +54,7 @@
                     <section class="departmentsStaff_In__cart__item">
                         <div class="academy_contint__text clearfix">
                             <p>
-                                {!! $faculty->{'content_' . app()->getLocale()} !!}
+                                {!! $facultceteg->{'content_' . app()->getLocale()} !!}
                             </p>
                         </div>
 

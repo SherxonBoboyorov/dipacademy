@@ -119,7 +119,7 @@ Route::group(
         Route::get('jobVacancy', [JobVacancyController::class, 'jobVacancy'])->name('jobVacancy');
         Route::get('E_reception', [EReceptionController::class, 'E_reception'])->name('E_reception');
         Route::post('save_quotecallbackSave', [EReceptionController::class, 'quotecallbackSave'])->name('quotecallbackSave');
-        Route::get('faculty', [FacultyDiplomacyController::class, 'faculty'])->name('faculty');
+        Route::get('faculty/{id?}', [FacultyDiplomacyController::class, 'faculty'])->name('faculty');
         Route::get('programmes', [ProgrammerController::class, 'programmes'])->name('programmes');
         Route::get('programmesins/{slug}', [ProgrammerController::class, 'show'])->name('programmesin');
         Route::get('research', [ResearcController::class, 'research'])->name('research');
@@ -136,7 +136,8 @@ Route::group(
         Route::get('admissionins/{slug}', [AdmisionController::class, 'show'])->name('admissionin');
         Route::get('admissionmasters', [AdmisionmasterController::class, 'admissionmasters'])->name('admissionmasters');
         Route::get('admissionmasterins/{id}', [AdmisionmasterController::class, 'show'])->name('admissionmasterin');
-        Route::post('front_search', [SearchController::class, 'search'])->name('front_search');
+        // Route::post('front_search', [SearchController::class, 'search'])->name('front_search');
+        Route::post('/search', [SearchController::class,'search'])->name('search');
 
 
 

@@ -25,11 +25,11 @@ class DepartmentsStaffController extends Controller
         $departments = Department::orderBy('created_at', 'DESC')->get();
         $teams = Team::orderBy('created_at', 'DESC')->where('department_id',$department->id)->get();
 
-
         return view('front.departmentsstaff.show', compact(
             'department',
             'departments',
-            'teams'
+            'teams',
+            'slug'
         ));
     }
 }
