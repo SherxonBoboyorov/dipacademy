@@ -10,7 +10,7 @@ class TeenderController extends Controller
 {
     public function list()
     {
-        $tenders = Tender::orderBy('created_at', 'DESC')->get();
+        $tenders = Tender::orderBy('created_at', 'DESC')->paginate(12);
         return view('front.tenders.list', compact('tenders'));
     }
 

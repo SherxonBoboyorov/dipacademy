@@ -9,13 +9,13 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">Tenders</h2>
+                <h2 class="academy__title__h2">@lang('main.tenders')</h2>
                 <ul class="academy__menu">
                     <li>
                         <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
-                        <a class="academy__menu__link">Tenders</a>
+                        <a class="academy__menu__link">@lang('main.tenders')</a>
                     </li>
                 </ul>
             </div>
@@ -52,42 +52,7 @@
                     @endforeach
                 </div>
 
-                <ul class="news__pagination">
-                    <li>
-                        <a href="#!" class="news__pagination__next"><i class="fas fa-angle-double-left"></i></a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__next"><i class="fas fa-chevron-left"></i></a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__link active">
-                            1
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__link">
-                            2
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__link">
-                            3
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__next"><i class="fas fa-chevron-right"></i></a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__next"><i class="fas fa-angle-double-right"></i></a>
-                    </li>
-                </ul>
-
+                {{ $tenders->links("vendor.pagination.pagination")}}
             </div>
         </section>
     </div>

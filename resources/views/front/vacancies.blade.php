@@ -7,13 +7,13 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">Job vacancies</h2>
+                <h2 class="academy__title__h2">@lang('main.jobs')</h2>
                 <ul class="academy__menu">
                     <li>
                         <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
-                        <a class="academy__menu__link">Job vacancies</a>
+                        <a class="academy__menu__link">@lang('main.jobs')</a>
                     </li>
                 </ul>
             </div>

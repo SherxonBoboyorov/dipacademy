@@ -11,7 +11,7 @@
                 <h2 class="academy__title__h2">{{ $admissionmasterin->{'title_' . app()->getLocale()} }}</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="{{ route('admissionmasters') }}" class="academy__menu__link">Programmes</a>
+                        <a href="{{ route('admissionmasters') }}" class="academy__menu__link">@lang('main.admissions_master')</a>
                     </li>
                     <li>
                         <a class="academy__menu__link">{{ $admissionmasterin->{'title_' . app()->getLocale()} }}</a>
@@ -32,32 +32,32 @@
 
                 <div class="programmes_in__list">
                     <div class="programmes_in__list__item">
-                        <h4 class="programmes_in__title__h4">Course type:</h4>
+                        <h4 class="programmes_in__title__h4">@lang('main.course_type'):</h4>
                         <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'course_type_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
-                        <h4 class="programmes_in__title__h4">Delivery mode:</h4>
+                        <h4 class="programmes_in__title__h4">@lang('main.delivery_mode'):</h4>
                         <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'delivery_mode_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
-                        <h4 class="programmes_in__title__h4">Study mode:</h4>
+                        <h4 class="programmes_in__title__h4">@lang('main.study_mode'):</h4>
                         <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'study_mode_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
-                        <h4 class="programmes_in__title__h4">Duration:</h4>
+                        <h4 class="programmes_in__title__h4">@lang('main.duration'):</h4>
                         <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'duration_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
-                        <h4 class="programmes_in__title__h4">Start date:</h4>
+                        <h4 class="programmes_in__title__h4">@lang('main.start_date'):</h4>
                         <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'start_date_' . app()->getLocale()} }}</h3>
                     </div>
 
                     <div class="programmes_in__list__item">
-                        <h4 class="programmes_in__title__h4">Application deadline:</h4>
+                        <h4 class="programmes_in__title__h4">@lang('main.application_deadline'):</h4>
                         <h3 class="programmes_in__title__h3">{{ $admissionmasterin->{'application_deadline_' . app()->getLocale()} }}</h3>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                 </div>
 
 
-                <div class="programmes_in__item">
+                {{-- <div class="programmes_in__item">
                     <h2 class="about__title__h2">Отзывы выпускников</h2>
 
                     <div class="programmes_in__reviews__list">
@@ -95,7 +95,7 @@
                     <div class="programmes_in__reviews__button">
                         <a href="#!" class="programmes_in__reviews__link">Подать заявку</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </section>
     </div>

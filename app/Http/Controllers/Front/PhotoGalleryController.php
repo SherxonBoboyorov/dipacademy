@@ -10,7 +10,7 @@ class PhotoGalleryController extends Controller
 {
     public function list()
     {
-        $photogallerys = Photo::orderBy('created_at', 'DESC')->paginate(8);
+        $photogallerys = Photo::orderBy('created_at', 'DESC')->paginate(12);
         return view('front.photogallery.list', compact('photogallerys'));
     }
 

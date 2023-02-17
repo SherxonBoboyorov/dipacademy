@@ -7,13 +7,13 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">Departments & Staff</h2>
+                <h2 class="academy__title__h2">@lang('main.departments_and_employees')</h2>
                 <ul class="academy__menu">
                     <li>
                         <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
-                        <a class="academy__menu__link">Departments & Staff</a>
+                        <a class="academy__menu__link">@lang('main.departments_and_employees')</a>
                     </li>
                 </ul>
             </div>
@@ -33,7 +33,7 @@
 
                     <div class="departmentsStaff__item">
                         <a href="{{ route('departmentsStaff', $department->{'slug_' . app()->getLocale()}) }}">
-                            <h2 class="departmentsStaff__title__h2">1</h2>
+                            <h2 class="departmentsStaff__title__h2">{{ $department->id }}</h2>
                             <h4 class="departmentsStaff__title__h4">
                                 {{ $department->{'title_' . app()->getLocale()} }}
                             </h4>

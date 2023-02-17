@@ -7,13 +7,13 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">News</h2>
+                <h2 class="academy__title__h2">@lang('main.news')</h2>
                 <ul class="academy__menu">
                     <li>
                         <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
-                        <a class="academy__menu__link">News</a>
+                        <a class="academy__menu__link">@lang('main.news')</a>
                     </li>
                 </ul>
             </div>
@@ -35,7 +35,7 @@
                         <a href="{{ route('article', $article->{'slug_' . app()->getLocale()}) }}">
                             <div class="news__img">
                                 <img src="{{ asset($article->image) }}" alt="news">
-                                <h3 class="news__title__h3">Publications</h3>
+                                <h3 class="news__title__h3">{{ $article->category->{'title_' . app()->getLocale()} }}</h3>
                             </div>
 
                             <div class="news__item__list">
@@ -57,44 +57,10 @@
                             </div>
                         </a>
                     </div>
-                  @endforeach
+                    @endforeach
                 </div>
 
-                <ul class="news__pagination">
-                    <li>
-                        <a href="#!" class="news__pagination__next"><i class="fas fa-angle-double-left"></i></a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__next"><i class="fas fa-chevron-left"></i></a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__link active">
-                            1
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__link">
-                            2
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__link">
-                            3
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__next"><i class="fas fa-chevron-right"></i></a>
-                    </li>
-
-                    <li>
-                        <a href="#!" class="news__pagination__next"><i class="fas fa-angle-double-right"></i></a>
-                    </li>
-                </ul>
+                {{ $articles->links("vendor.pagination.pagination")}}
 
             </div>
         </section>

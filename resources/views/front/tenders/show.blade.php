@@ -12,7 +12,7 @@
                 <h2 class="academy__title__h2"> {{ $tender->{'title_' . app()->getLocale()} }}</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="{{ route('tenders') }}" class="academy__menu__link">Tenders</a>
+                        <a href="{{ route('tenders') }}" class="academy__menu__link">@lang('main.tenders')</a>
                     </li>
                     <li>
                         <a class="academy__menu__link"> {{ $tender->{'title_' . app()->getLocale()} }}</a>

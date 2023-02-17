@@ -7,13 +7,13 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">Norms & Statements</h2>
+                <h2 class="academy__title__h2">@lang('main.regulations_acts')</h2>
                 <ul class="academy__menu">
                     <li>
                         <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
-                        <a href="NormsStatements.html" class="academy__menu__link">Norms & Statements</a>
+                        <a class="academy__menu__link">@lang('main.regulations_acts')</a>
                     </li>
                 </ul>
             </div>

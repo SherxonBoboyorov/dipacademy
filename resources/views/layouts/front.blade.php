@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="{{ asset('front/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/custom1.css') }}">
-
     <title>Dip-Academy</title>
+
 </head>
 <body>
 
@@ -166,7 +166,7 @@
 
                                         <ul class="header__bottom__none__menu">
                                             <li>
-                                                <a href="{{ route('faculty') }}" class="header__bottom__link">
+                                                <a href="#!" class="header__bottom__link">
                                                     @lang('main.faculty_of_retraining')
                                                 </a>
                                             </li>
@@ -360,21 +360,21 @@
 
                             <ul class="footer__icons__menu">
                                 <li>
-                                    <a href="#!" class="footer__icons__link">
+                                    <a href="{{ $options->where('key', 'instagram')->first()->value }}" class="footer__icons__link">
                                         <span><i class="fab fa-instagram"></i></span>
                                         Instagram
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#!" class="footer__icons__link">
+                                    <a href="{{ $options->where('key', 'facebook')->first()->value }}" class="footer__icons__link">
                                         <span><i class="fab fa-facebook-f"></i></span>
                                         Facebook
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#!" class="footer__icons__link">
+                                    <a href="{{ $options->where('key', 'telegram')->first()->value }}" class="footer__icons__link">
                                         <span><i class="fab fa-telegram-plane"></i></span>
                                         Telegram
                                     </a>
@@ -384,22 +384,22 @@
                             <ul class="footer__address">
                                 <li>
                                     <a class="footer__address__link">
-                                        <span>address:</span>
-                                        54 Mustakillik Ave., Tashkent 100007, Uzbekistan
+                                        <span>@lang('main.address'):</span>
+                                        {{ $options->where('key', 'address_' . app()->getLocale())->first()->value }}
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tel:(+998 71) 267-39-50" class="footer__address__link">
-                                        <span>Phone:</span>
-                                        (+998 71) 267-39-50
+                                    <a href="tel:{{ $options->where('key', 'phone')->first()->value }}" class="footer__address__link">
+                                        <span>@lang('main.phone'):</span>
+                                        {{ $options->where('key', 'phone')->first()->value }}
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="tel:(+998 71) 267-09-00:" class="footer__address__link">
-                                        <span>Fax:</span>
-                                        (+998 71) 267-09-00:
+                                    <a href="tel:{{ $options->where('key', 'fax')->first()->value }}:" class="footer__address__link">
+                                        <span>@lang('main.fax'):</span>
+                                        {{ $options->where('key', 'fax')->first()->value }}:
                                     </a>
                                 </li>
                             </ul>

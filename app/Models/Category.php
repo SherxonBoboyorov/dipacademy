@@ -17,4 +17,8 @@ class Category extends Model
         'title_en',
     ];
 
+    public function articles() {
+        return $this->hasMany(Article::class);
+    }
+
 }

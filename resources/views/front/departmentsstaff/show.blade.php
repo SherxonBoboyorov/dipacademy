@@ -10,7 +10,7 @@
                 <h2 class="academy__title__h2">{{ $department->{'title_' . app()->getLocale()} }}</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="{{ route('departmentsStaffs') }}" class="academy__menu__link">Departments & Staff</a>
+                        <a href="{{ route('departmentsStaffs') }}" class="academy__menu__link">@lang('main.departments_and_employees')</a>
                     </li>
                     <li>
                         <a class="academy__menu__link">{{ $department->{'title_' . app()->getLocale()} }}</a>
@@ -31,7 +31,7 @@
 
                 <div class="departmentsStaff_In__list">
                     <aside>
-                        <h2 class="departmentsStaff_In__title__h2">Отделы</h2>
+                        <h2 class="departmentsStaff_In__title__h2">@lang('main.departments')</h2>
 
                         <ul class="departmentsStaff_In__menu">
                             @foreach ($departments as $department)
@@ -52,7 +52,7 @@
                             </p>
                         </div>
 
-                        <h2 class="about__title__h2">Команда</h2>
+                        <h2 class="about__title__h2">@lang('main.team')</h2>
 
 
                         <div class="departmentsStaff_In__cart__list">

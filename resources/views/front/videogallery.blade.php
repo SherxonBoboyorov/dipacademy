@@ -96,41 +96,8 @@
                         @endforeach
                     </div>
 
-                    <ul class="news__pagination">
-                        <li>
-                            <a href="#!" class="news__pagination__next"><i class="fas fa-angle-double-left"></i></a>
-                        </li>
+                    {{ $videos->links("vendor.pagination.pagination")}}
 
-                        <li>
-                            <a href="#!" class="news__pagination__next"><i class="fas fa-chevron-left"></i></a>
-                        </li>
-
-                        <li>
-                            <a href="#!" class="news__pagination__link active">
-                                1
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#!" class="news__pagination__link">
-                                2
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#!" class="news__pagination__link">
-                                3
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#!" class="news__pagination__next"><i class="fas fa-chevron-right"></i></a>
-                        </li>
-
-                        <li>
-                            <a href="#!" class="news__pagination__next"><i class="fas fa-angle-double-right"></i></a>
-                        </li>
-                    </ul>
                 </div>
                 @endif
             </div>

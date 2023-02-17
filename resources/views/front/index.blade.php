@@ -14,7 +14,7 @@
                         <div class="slider__text">
                             <p>{{ $slider->{'description_' . app()->getLocale()} }}</p>
                         </div>
-                        <a href="{{ $slider->link }}" class="slider__link">More</a>
+                        <a href="{{ $slider->link }}" class="slider__link">@lang('main.more')</a>
                     </div>
                 </section>
             </div>
@@ -79,7 +79,7 @@
     <div class="programmes_for">
         <section class="container">
             <div class="programmes_for__cart">
-                <h2 class="about__title__h2">programmes for diplomats</h2>
+                <h2 class="about__title__h2">@lang('main.programmes_for_diplomats')</h2>
 
                 <div class="programmes_for__list">
                     @foreach ($programmesins as $programmesin)
@@ -94,7 +94,7 @@
                             </p>
                         </div>
 
-                        <a href="{{ route('programmesin', $programmesin->{'slug_' . app()->getLocale()}) }}" class="programmes_for__link">More <span><i class="fas fa-chevron-right"></i></span></a>
+                        <a href="{{ route('programmesin', $programmesin->{'slug_' . app()->getLocale()}) }}" class="programmes_for__link">@lang('main.more') <span><i class="fas fa-chevron-right"></i></span></a>
                     </div>
                     @endforeach
                 </div>
@@ -118,7 +118,7 @@
                     </div>
 
                     <div class="magistracy__item">
-                        <h2 class="about__title__h2">магистратура</h2>
+                        <h2 class="about__title__h2">@lang('main.magistracy')</h2>
                         <div class="about__text">
                             <p>
                                 {!! $magistracy->{'content_' . app()->getLocale()} !!}
@@ -141,7 +141,7 @@
     <div class="all_programmes">
         <section class="container">
             <div class="all_programmes__cart">
-                <h2 class="about__title__h2">all programmes</h2>
+                <h2 class="about__title__h2">@lang('main.all_programmes')</h2>
 
                 <div class="all_programmes__list">
                     @foreach ($programmesmasterins as $programmesmasterin)
@@ -207,12 +207,12 @@
                 </div>
 
                 <div class="news__list">
-                   @foreach ($articles as $article)
+                   @foreach (\App\Models\Article::orderBy('created_at', 'DESC')->get() as $article)
                     <div class="news__item">
                         <a href="{{ route('article', $article->{'slug_' . app()->getLocale()}) }}">
                             <div class="news__img">
                                 <img src="{{ asset($article->image) }}" alt="news">
-                                <h3 class="news__title__h3">Publications</h3>
+                                <h3 class="news__title__h3">{{ $article->category->{'title_' . app()->getLocale()} }}</h3>
                             </div>
 
                             <div class="news__item__list">

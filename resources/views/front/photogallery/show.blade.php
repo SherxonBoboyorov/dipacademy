@@ -10,7 +10,7 @@
                 <h2 class="academy__title__h2">{{ $photogallery->{'title_' . app()->getLocale()} }}</h2>
                 <ul class="academy__menu">
                     <li>
-                        <a href="{{ route('photogallerys') }}" class="academy__menu__link">Фотогалерея</a>
+                        <a href="{{ route('photogallerys') }}" class="academy__menu__link">@lang('main.video_gallery')</a>
                     </li>
                     <li>
                         <a class="academy__menu__link">{{ $photogallery->{'title_' . app()->getLocale()} }}</a>

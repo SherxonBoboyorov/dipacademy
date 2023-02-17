@@ -10,7 +10,7 @@ class VideoGalleryController extends Controller
 {
     public function videoGallery()
     {
-        $videos = Video::orderBy('created_at', 'DESC')->get();
+        $videos = Video::orderBy('created_at', 'DESC')->paginate(6);
 
         return view('front.videogallery', compact(
             'videos'

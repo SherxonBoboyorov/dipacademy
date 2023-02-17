@@ -7,13 +7,13 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">Master</h2>
+                <h2 class="academy__title__h2">@lang('main.master')</h2>
                 <ul class="academy__menu">
                     <li>
                         <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
-                        <a class="academy__menu__link">Master</a>
+                        <a class="academy__menu__link">@lang('main.master')</a>
                     </li>
                 </ul>
             </div>
@@ -50,7 +50,7 @@
                             </p>
                         </div>
 
-                        <a href=" {{ route('programmesmasterin', $programmesmasterin->id) }}" class="programmes_for__link">More <span><i class="fas fa-chevron-right"></i></span></a>
+                        <a href=" {{ route('programmesmasterin', $programmesmasterin->id) }}" class="programmes_for__link">@lang('main.more') <span><i class="fas fa-chevron-right"></i></span></a>
                     </div>
                     @endforeach
                 </div>

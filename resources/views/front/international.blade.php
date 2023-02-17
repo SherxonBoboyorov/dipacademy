@@ -7,13 +7,13 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">International</h2>
+                <h2 class="academy__title__h2">@lang('main.international')</h2>
                 <ul class="academy__menu">
                     <li>
                         <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
-                        <a class="academy__menu__link">International</a>
+                        <a class="academy__menu__link">@lang('main.international')</a>
                     </li>
                 </ul>
             </div>
@@ -49,7 +49,7 @@
     <div class="our_partners">
         <section class="container">
             <div class="our_partners__cart">
-                <h2 class="about__title__h2">our partners</h2>
+                <h2 class="about__title__h2">@lang('main.our_partners')</h2>
 
                 <div class="our_partners__list owl-carousel">
                   @foreach ($ourpartners as $ourpartner)

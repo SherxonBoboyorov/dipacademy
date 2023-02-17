@@ -11,7 +11,7 @@ class DepartmentsStaffController extends Controller
 {
     public function list()
     {
-        $departments = Department::orderBy('created_at', 'DESC')->get();
+        $departments = Department::all();
         return view('front.departmentsstaff.list', compact('departments'));
     }
 

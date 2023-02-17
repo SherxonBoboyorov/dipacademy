@@ -7,13 +7,13 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">Факультет практической дипломатии</h2>
+                <h2 class="academy__title__h2">@lang('main.daculty_of_practical_diplomacy')</h2>
                 <ul class="academy__menu">
                     <li>
                         <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
-                        <a class="academy__menu__link">Факультет практической дипломатии</a>
+                        <a class="academy__menu__link">@lang('main.daculty_of_practical_diplomacy')</a>
                     </li>
                 </ul>
             </div>
@@ -31,12 +31,12 @@
 
                 <div class="departmentsStaff_In__list">
                     <aside>
-                        <h2 class="departmentsStaff_In__title__h2">Кафедры</h2>
+                        <h2 class="departmentsStaff_In__title__h2">@lang('main.department')</h2>
                         @foreach ($faculties as $faculty)
 
                         <ul class="departmentsStaff_In__menu">
 
-                            <li class="active">
+                            <li class="@if ($faculty->id) active @endif">
                                 <a href="{{ route('faculty', $faculty->id) }}" class="departmentsStaff_In__menu__link">
                                     {{ $faculty->{'title_' . app()->getLocale()} }}
                                 </a>
@@ -54,7 +54,7 @@
                             </p>
                         </div>
 
-                        <h2 class="about__title__h2">Команда</h2>
+                        <h2 class="about__title__h2">@lang('main.team')</h2>
 
                         <div class="departmentsStaff_In__cart__list">
                             @foreach ($teams as $team)

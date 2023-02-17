@@ -54,7 +54,7 @@
     <div class="programmes">
         <section class="container">
             <div class="programmes__cart">
-                <h2 class="about__title__h2">programmes</h2>
+                <h2 class="about__title__h2">@lang('main.programmes')</h2>
 
                 <ul class="programmes__menu">
                   @foreach ($programmesins as $programmesin)
@@ -77,7 +77,7 @@
             <div class="magistracy_in__cart">
                 @foreach ($magistracies as $magistrscy)
 
-                <h2 class="about__title__h2">магистратура</h2>
+                <h2 class="about__title__h2">@lang('main.magistracy')</h2>
                 <div class="academy_contint__text clearfix">
                     <p>
                         {!! $magistrscy->{'content_' . app()->getLocale()} !!}
@@ -96,7 +96,7 @@
     <div class="our_partners">
         <section class="container">
             <div class="our_partners__cart">
-                <h2 class="about__title__h2">our partners</h2>
+                <h2 class="about__title__h2">@lang('main.our_partners')</h2>
 
                 <div class="our_partners__list owl-carousel">
                     @foreach ($ourpartners as $outpartner)
