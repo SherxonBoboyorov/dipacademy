@@ -25,6 +25,7 @@ class CreateTeam extends FormRequest
     {
         return [
             'department_id' => 'required',
+            'faculty_id' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,webp',
             'name_ru' => 'required|max:255',
             'name_uz' => 'required|max:255',

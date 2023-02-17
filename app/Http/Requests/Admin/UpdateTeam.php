@@ -25,6 +25,7 @@ class UpdateTeam extends FormRequest
     {
         return [
             'department_id' => 'required',
+            'faculty_id' => 'required',
             'name_ru' => 'required|max:255',
             'name_uz' => 'required|max:255',
             'name_en' => 'required|max:255',

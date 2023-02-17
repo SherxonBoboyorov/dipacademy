@@ -20,7 +20,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <label>Departments & Staff</label>
                             <select name="department_id" id="department_id" class="form-control">
                                 @foreach ($departments as $department)
@@ -36,6 +36,26 @@
                             </div>
                             @endif
                         </div>
+
+                        <div class="col-md-6">
+                            <label>Faculties</label>
+                            <select name="faculty_id" id="faculty_id" class="form-control">
+                                @foreach ($faculties as $faculty)
+                                    <option value="{{ $faculty->id }}">{{ $faculty->title_en }}</option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('faculty_id'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('faculty_id') }}
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 15px">
+
                         <div class="col-md-3">
                             <label for="name_uz">Name [Uzbek]</label>
                             <input type="text" id="name_uz" class="form-control" name="name_uz">

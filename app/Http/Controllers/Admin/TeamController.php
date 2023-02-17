@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\CreateTeam;
 use App\Http\Requests\Admin\UpdateTeam;
 use App\Models\Department;
 use App\Models\Team;
+use App\Models\Faculty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -34,8 +35,11 @@ class TeamController extends Controller
     public function create()
     {
         $departments = Department::orderBy('created_at', 'DESC')->get();
+        $faculties = Faculty::orderBy('created_at', 'DESC')->get();
+
         return view('admin.team.create', [
-            'departments' => $departments
+            'departments' => $departments,
+            'faculties' => $faculties
         ]);
     }
 
@@ -81,8 +85,11 @@ class TeamController extends Controller
     public function edit(Team $team)
     {
         $department = Department::orderBy('created_at', 'DESC')->get();
+        $faculty = Faculty::orderBy('created_at', 'DESC')->get();
+
         return view('admin.team.edit', [
             'department' => $department,
+            'faculty' => $faculty,
             'team' => $team
         ]);
     }

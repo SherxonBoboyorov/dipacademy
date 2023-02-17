@@ -166,9 +166,11 @@
 
                                         <ul class="header__bottom__none__menu">
                                             <li>
-                                                <a href="#!" class="header__bottom__link">
+                                                @foreach (\App\Models\Department::orderBy('created_at', 'DESC')->take(1)->get() as $departments)
+                                                <a href="{{ route('departmentsStaff', $departments->{'slug_' . app()->getLocale()}) }}" class="header__bottom__link">
                                                     @lang('main.faculty_of_retraining')
                                                 </a>
+                                                @endforeach
                                             </li>
 
                                             <li>
@@ -333,8 +335,9 @@
         </div>
 
         <div class="header__form__cart modal" id="modal1">
-            <form action="#!" class="header__form">
-                <input class="header__form__input" placeholder="@lang('main.search')" type="search">
+            <form action="{{ route('front_search') }}" class="header__form" method="POST">
+                @csrf
+                <input class="header__form__input" name="phrase" placeholder="@lang('main.search')" type="search">
                 <button class="header__form__button" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>

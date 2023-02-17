@@ -22,6 +22,12 @@ return new class extends Migration
             ->on('departments')
             ->onDelete('cascade');
 
+            $table->unsignedBigInteger('faculty_id')->nullable()->unsigned();
+            $table->foreign('faculty_id')
+            ->references('id')
+            ->on('faculties')
+            ->onDelete('cascade');
+
             $table->string('image');
 
             $table->string('name_ru');
@@ -55,7 +61,7 @@ return new class extends Migration
             $table->text('meta_description_ru')->nullable();
             $table->text('meta_description_uz')->nullable();
             $table->text('meta_description_en')->nullable();
-
+            
             $table->timestamps();
         });
     }

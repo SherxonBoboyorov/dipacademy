@@ -64,11 +64,11 @@
                             <li>
                                 <h4 class="news_in__data">@lang('main.share'):</h4>
                                 <div class="news_in__icons__list">
-                                    <a href="#!" class="news_in__icons__link">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={!! request()->url() !!}" class="news_in__icons__link">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
 
-                                    <a href="#!" class="news_in__icons__link">
+                                    <a href="http://twitter.com/share?text=Im Sharing on Twitter&url={!! request()->url() !!}" class="news_in__icons__link">
                                         <i class="fab fa-twitter"></i>
                                     </a>
 
