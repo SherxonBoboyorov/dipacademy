@@ -13,7 +13,7 @@
                         <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
-                        <a href="Leadership.html" class="academy__menu__link">@lang('main.management')</a>
+                        <a class="academy__menu__link">@lang('main.management')</a>
                     </li>
                 </ul>
             </div>

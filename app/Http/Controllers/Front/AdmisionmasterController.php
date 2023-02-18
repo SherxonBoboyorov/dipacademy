@@ -24,7 +24,7 @@ class AdmisionmasterController extends Controller
     {
         $admissionmasterin = AdmissionMasterIn::find($id);
 
-        return view('front.programmaster.show', [
+        return view('front.admissionmaster.show', [
             'admissionmasterin' => $admissionmasterin
         ]);
     }

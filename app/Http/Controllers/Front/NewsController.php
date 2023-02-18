@@ -25,7 +25,7 @@ class NewsController extends Controller
         $article->views += 1;
         $article->save();
 
-        $articles_list_alls = Article::orderBy('created_at', 'DESC')->get();
+        $articles_list_alls = Article::orderBy('created_at', 'DESC')->paginate(4);
         $articles = Article::where('category_id', $slug)->orderBy('created_at', 'DESC')->get();
 
         return view('front.news.show', compact(

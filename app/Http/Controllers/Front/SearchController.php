@@ -5,39 +5,37 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Leadership;
-use App\Models\Team;
+use App\Models\AdmissionIn;
+use App\Models\AdmissionMasterIn;
+use App\Models\ProgrammesIn;
+use App\Models\ProgrammesMasterIn;
+use App\Models\Tender;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
     public function search(Request $request)
-{
-    $query = $request->input('query');
-    $results = array();
+    {
+        if(strlen($request->phrase) < 0) {
+            return redirect()->route('/');
+        }
 
-    $articles = Article::where('title_uz', 'LIKE', "%$query%")
-         ->where('title_ru', 'LIKE', "%$query%")
-         ->where('title_en', 'LIKE', "%$query%")->get();
-    if ($articles->count() > 0) {
-        $results['articles'] = $articles;
+        $articles = Article::whereLike(['title_uz', 'title_ru', 'title_en'], $request->phrase)->get();
+        $leaderships = Leadership::whereLike(['name_uz', 'name_ru', 'name_en'], $request->phrase)->get();
+        $admissionins = AdmissionIn::whereLike(['title_uz', 'title_ru', 'title_en'], $request->phrase)->get();
+        $admissionmasterins = AdmissionMasterIn::whereLike(['title_uz', 'title_ru', 'title_en'], $request->phrase)->get();
+        $programmesins = ProgrammesIn::whereLike(['title_uz', 'title_ru', 'title_en'], $request->phrase)->get();
+        $programmesmasterins = ProgrammesMasterIn::whereLike(['title_uz', 'title_ru', 'title_en'], $request->phrase)->get();
+        $tenders = Tender::whereLike(['title_uz', 'title_ru', 'title_en'], $request->phrase)->get();
+
+        return view('front.search', compact(
+            'articles',
+            'leaderships',
+            'admissionins',
+            'admissionmasterins',
+            'programmesins',
+            'programmesmasterins',
+            'tenders'
+        ));
     }
-
-    $leaderships = Leadership::where('name_uz', 'LIKE', "%$query%")
-         ->where('name_ru', 'LIKE', "%$query%")
-         ->where('name_en', 'LIKE', "%$query%")->get();
-    if ($leaderships->count() > 0) {
-        $results['leaderships'] = $leaderships;
-    }
-
-    $teams = Team::where('name_uz', 'LIKE', "%$query%")
-         ->where('name_ru', 'LIKE', "%$query%")
-         ->where('name_en', 'LIKE', "%$query%")->get();
-    if ($teams->count() > 0) {
-        $results['teams'] = $teams;
-    }
-
-
-
-    return view('front.search', compact('results'));
-}
 }

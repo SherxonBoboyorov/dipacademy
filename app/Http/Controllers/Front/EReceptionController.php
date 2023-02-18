@@ -29,7 +29,7 @@ class EReceptionController extends Controller
             'index' => 'required',
             'email' => 'required',
             'phone_number' => 'required',
-            'question_text' => 'required',
+            'question_text' => ''
        ]);
 
         Reception::create($data);

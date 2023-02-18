@@ -31,7 +31,7 @@ return [
     'normal_design' => 'Oddiy dizayn',
     'black_and_white_design' => 'Qora va oq dizayn',
     'font_size' => 'Shrift hajmi',
-    'View' =>'Ko\'rinish',
+    'view' =>'Ko\'rinish',
     'special_functions' => 'Maxsus imkoniyatlar',
     'search' => 'Qidirmoq',
     'more' => 'Ko\'proq',
@@ -70,6 +70,7 @@ return [
     'views' => 'Qarashlar',
     'category' => 'Kategoriya',
     'share' => 'Ulashish',
-    'similar_news' => 'Shunga o\'xshash yangiliklar'
+    'similar_news' => 'Shunga o\'xshash yangiliklar',
+    'searching_results' => 'qidiruv natijalari'
 
 ];

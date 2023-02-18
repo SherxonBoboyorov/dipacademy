@@ -70,6 +70,7 @@ return  [
     'views' => 'Views',
     'category' => 'Category',
     'share' => 'Share',
-    'similar_news' => 'Similar news'
+    'similar_news' => 'Similar news',
+    'searching_results' => 'Searching results'
 
 ];

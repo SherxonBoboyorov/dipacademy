@@ -38,7 +38,7 @@
                     <input type="text" name="index" placeholder="@lang('main.index')" class="e_reception__input" required>
                     <input type="email" name="email" placeholder="@lang('main.email')" class="e_reception__input" required>
                     <input type="tel" name="phone_number" placeholder="@lang('main.phone')" class="e_reception__input" required>
-                    <textarea class="e_reception__textarea" name="question_text" placeholder="@lang('main.question_text')" required></textarea>
+                    <textarea class="e_reception__textarea" name="question_text" placeholder="@lang('main.question_text')"></textarea>
                     <label class="input-wrap">
                         <input type="checkbox" class="checkboxNone">
                         <span class="checkmark"></span>

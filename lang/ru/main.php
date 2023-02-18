@@ -70,6 +70,7 @@ return [
     'views' => 'Просмотры',
     'category' => 'Категория',
     'share' => 'Поделиться',
-    'similar_news' => 'Похожие новости'
+    'similar_news' => 'Похожие новости',
+    'searching_results' => 'Результаты поиска'
 
 ];
