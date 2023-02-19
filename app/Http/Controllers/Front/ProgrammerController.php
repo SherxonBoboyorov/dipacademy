@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Programmes;
 use App\Models\ProgrammesIn;
+use App\Models\ProgramReviw;
 use Illuminate\Http\Request;
 
 class ProgrammerController extends Controller
@@ -20,15 +21,16 @@ class ProgrammerController extends Controller
         ));
     }
 
-    public function show($slug)
+    public function show($id)
     {
-        $programmesin = ProgrammesIn::where('slug_uz', $slug)
-            ->orWhere('slug_ru', $slug)
-            ->orWhere('slug_en', $slug)
-            ->first();
+        $programmesin = ProgrammesIn::find($id);
+
+        $program_reviws = ProgramReviw::orderBy('created_at', 'DESC')->where('programmesIn_id',$programmesin->id)->get();
+
 
         return view('front.program.show', compact(
             'programmesin',
+            'program_reviws'
         ));
     }
 }

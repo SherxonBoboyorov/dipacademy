@@ -337,7 +337,7 @@
         <div class="header__form__cart modal" id="modal1">
             <form action="{{ route('front_search') }}" class="header__form" method="GET">
                 @csrf
-                <input class="header__form__input" name="phrase" placeholder="@lang('main.search')" type="search">
+                <input class="header__form__input" name="phrase" placeholder="@lang('main.search')" type="search" required>
                 <button class="header__form__button" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>

@@ -20,13 +20,9 @@ class AdmisionController extends Controller
         ));
     }
 
-    public function show($slug)
+    public function show($id)
     {
-        $admissionin = AdmissionIn::where('slug_uz', $slug)
-            ->orWhere('slug_ru', $slug)
-            ->orWhere('slug_en', $slug)
-            ->first();
-
+        $admissionin = AdmissionIn::find($id);
         return view('front.admission.show', compact(
             'admissionin',
         ));

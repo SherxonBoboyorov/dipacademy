@@ -32,6 +32,7 @@ use App\Http\Controllers\Admin\OurPartnerController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\TenderController;
+use App\Http\Controllers\Admin\ProgramReviwController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
 
 // front
@@ -94,7 +95,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
          'ourpartner' => OurPartnerController::class,
          'category' => CategoryController::class,
          'article' => ArticleController::class,
-         'tender' => TenderController::class
+         'tender' => TenderController::class,
+         'programreviw' => ProgramReviwController::class
 
      ]);
 });
@@ -121,7 +123,7 @@ Route::group(
         Route::post('save_quotecallbackSave', [EReceptionController::class, 'quotecallbackSave'])->name('quotecallbackSave');
         Route::get('faculty/{id?}', [FacultyDiplomacyController::class, 'faculty'])->name('faculty');
         Route::get('programmes', [ProgrammerController::class, 'programmes'])->name('programmes');
-        Route::get('programmesins/{slug}', [ProgrammerController::class, 'show'])->name('programmesin');
+        Route::get('programmesins/{id}', [ProgrammerController::class, 'show'])->name('programmesin');
         Route::get('research', [ResearcController::class, 'research'])->name('research');
         Route::get('international', [InternationController::class, 'international'])->name('international');
         Route::get('contacts', [ContactController::class, 'contacts'])->name('contacts');
@@ -133,7 +135,7 @@ Route::group(
         Route::get('programmesmasters', [ProgramMasterController::class, 'programmesmasters'])->name('programmesmasters');
         Route::get('programmesmasterins/{id}', [ProgramMasterController::class, 'show'])->name('programmesmasterin');
         Route::get('admissions', [AdmisionController::class, 'admissions'])->name('admissions');
-        Route::get('admissionins/{slug}', [AdmisionController::class, 'show'])->name('admissionin');
+        Route::get('admissionins/{id}', [AdmisionController::class, 'show'])->name('admissionin');
         Route::get('admissionmasters', [AdmisionmasterController::class, 'admissionmasters'])->name('admissionmasters');
         Route::get('admissionmasterins/{id}', [AdmisionmasterController::class, 'show'])->name('admissionmasterin');
         Route::get('front_search', [SearchController::class, 'search'])->name('front_search');
