@@ -33,6 +33,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\TenderController;
 use App\Http\Controllers\Admin\ProgramReviwController;
+use App\Http\Controllers\Admin\PrograminReviwController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
 
 // front
@@ -96,7 +97,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
          'category' => CategoryController::class,
          'article' => ArticleController::class,
          'tender' => TenderController::class,
-         'programreviw' => ProgramReviwController::class
+         'programreviw' => ProgramReviwController::class,
+         'programinreviw' => PrograminReviwController::class
 
      ]);
 });

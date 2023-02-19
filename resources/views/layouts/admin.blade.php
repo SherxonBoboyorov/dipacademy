@@ -466,19 +466,15 @@
                      </li>
                     {{-- end --}}
 
-
-
-
-
-
                            {{-- start--}}
-
                            <li class="nav-item">
+
                             <a href="#" class="nav-link">
-                                <i class="nav-icon"></i>
-                                <p>
-                                    Programmes_Master
-                                </p>
+                            <i class="nav-icon"></i>
+                            <p>
+                                Programmes_Master
+                                 <i class="right fas fa-angle-left"></i>
+                            </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
@@ -491,20 +487,18 @@
                                        <p>Create</p>
                                     </a>
                                 </li> --}}
-                                </ul>
-                          </li>
-                         {{-- end--}}
 
-                          {{-- start--}}
 
-                          <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon  fas fa-tachometer-alt"></i>
-                                <p>
+                            <li class="nav-item">
+
+                                <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p style="color: #007bff">
                                     Programmes_Master_In
+                                     <i class="right fas fa-angle-left"></i>
                                 </p>
-                            </a>
-                            <ul class="nav nav-treeview">
+                                </a>
+                                <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{ route('programmesmasterin.index') }}" class="nav-link">
                                        <p>List</p>
@@ -516,8 +510,36 @@
                                     </a>
                                 </li>
                                 </ul>
-                          </li>
-                         {{-- end--}}
+
+
+                             <li class="nav-item">
+
+                                <a href="#" class="nav-link">
+                                <i class="nav-icon"></i>
+                                <p style="color: #007bff">
+                                    Alumni reviews
+                                     <i class="right fas fa-angle-left"></i>
+                                </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('programinreviw.index') }}" class="nav-link">
+                                       <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('programinreviw.create') }}" class="nav-link">
+                                       <p>Create</p>
+                                    </a>
+                                </li>
+                                </ul>
+                             </li>
+                             </li>
+
+                            </ul>
+                         </li>
+                        {{-- end --}}
+
 
                          {{-- start--}}
 
