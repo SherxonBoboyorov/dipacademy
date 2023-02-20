@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 
-class ProgramReviw extends Model
+class AdmissionReviw extends Model
 {
     use HasFactory;
 
-    protected $table = 'program_reviws';
+    protected $table = 'admission_reviws';
 
     protected $fillable = [
-        'programmesIn_id',
+        'admissionIn_id',
         'image',
         'name_ru',
         'name_uz',
@@ -26,9 +26,9 @@ class ProgramReviw extends Model
         'content_en',
     ];
 
-    public function programmesin()
+    public function admissionin()
     {
-        return $this->belongsTo('App\Models\ProgrammesIn', 'programmesIn_id');
+        return $this->belongsTo('App\Models\AdmissionIn', 'admissionIn_id');
     }
 
     public static function uploadImage($request): ?string
@@ -39,42 +39,41 @@ class ProgramReviw extends Model
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/programreviw/' . date('d-m-Y'),
+                    public_path() . '/upload/admissionreviw/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/programreviw/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/admissionreviw/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
         return null;
     }
 
-    public static function updateImage($request, $programreviw): string
+    public static function updateImage($request, $admissionreviw): string
     {
         if ($request->hasFile('image')) {
-            if (File::exists(public_path() . $programreviw->image)) {
-                File::delete(public_path() . $programreviw->image);
+            if (File::exists(public_path() . $admissionreviw->image)) {
+                File::delete(public_path() . $admissionreviw->image);
             }
 
             self::checkDirectory();
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/programreviw/' . date('d-m-Y'),
+                    public_path() . '/upload/admissionreviw/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/programreviw/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/admissionreviw/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
-        return $programreviw->image;
+        return $admissionreviw->image;
     }
 
     private static function checkDirectory(): bool
     {
-        if (!File::exists(public_path() . '/upload/programreviw/' . date('d-m-Y'))) {
-            File::makeDirectory(public_path() . '/upload/programreviw/' . date('d-m-Y'), $mode = 0777, true, true);
+        if (!File::exists(public_path() . '/upload/admissionreviw/' . date('d-m-Y'))) {
+            File::makeDirectory(public_path() . '/upload/admissionreviw/' . date('d-m-Y'), $mode = 0777, true, true);
         }
 
         return true;
     }
-
 }

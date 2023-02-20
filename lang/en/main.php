@@ -71,6 +71,7 @@ return  [
     'category' => 'Category',
     'share' => 'Share',
     'similar_news' => 'Similar news',
-    'searching_results' => 'Searching results'
+    'searching_results' => 'Searching results',
+    'alumni_reviews' => 'Alumni reviews'
 
 ];

@@ -71,6 +71,7 @@ return [
     'category' => 'Kategoriya',
     'share' => 'Ulashish',
     'similar_news' => 'Shunga o\'xshash yangiliklar',
-    'searching_results' => 'Qidiruv natijalari'
+    'searching_results' => 'Qidiruv natijalari',
+    'alumni_reviews' => 'Bitiruvchilarning sharhlari'
 
 ];

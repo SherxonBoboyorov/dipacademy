@@ -72,7 +72,7 @@
 
 
                 <div class="programmes_in__item">
-                    <h2 class="about__title__h2">Отзывы выпускников</h2>
+                    <h2 class="about__title__h2">@lang('main.alumni_reviews')</h2>
 
                     <div class="programmes_in__reviews__list">
                         @foreach ($programin_reviws as $programinreviw)

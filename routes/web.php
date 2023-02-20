@@ -34,6 +34,8 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\TenderController;
 use App\Http\Controllers\Admin\ProgramReviwController;
 use App\Http\Controllers\Admin\PrograminReviwController;
+use App\Http\Controllers\Admin\AdmissionReviwController;
+use App\Http\Controllers\Admin\AdmissionMasterReviwController;
 use Unisharp\Laravel\LaravelFilemanager\Lfm;
 
 // front
@@ -98,7 +100,9 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
          'article' => ArticleController::class,
          'tender' => TenderController::class,
          'programreviw' => ProgramReviwController::class,
-         'programinreviw' => PrograminReviwController::class
+         'programinreviw' => PrograminReviwController::class,
+         'admissionreviw' => AdmissionReviwController::class,
+         'admissionmasterreviw' => AdmissionMasterReviwController::class
 
      ]);
 });

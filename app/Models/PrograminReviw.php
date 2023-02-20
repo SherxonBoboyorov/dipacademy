@@ -26,7 +26,7 @@ class PrograminReviw extends Model
         'content_en',
     ];
 
-    public function ProgrammesMasterIn()
+    public function programmesmasterin()
     {
         return $this->belongsTo('App\Models\ProgrammesMasterIn', 'programmesMasterIn_id');
     }

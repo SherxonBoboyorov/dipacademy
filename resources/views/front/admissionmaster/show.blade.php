@@ -71,31 +71,34 @@
                 </div>
 
 
-                {{-- <div class="programmes_in__item">
-                    <h2 class="about__title__h2">Отзывы выпускников</h2>
+                <div class="programmes_in__item">
+                    <h2 class="about__title__h2">@lang('main.alumni_reviews')</h2>
 
                     <div class="programmes_in__reviews__list">
+                        @foreach ($admission_master_reviws as $admissionmasterreviw)
+
+                        @endforeach
 
                         <div class="programmes_in__reviews__item">
                             <div class="programmes_in__reviews__img">
-                                <img src="{{ asset('front/foto/programmes_in_1.png') }}" alt="">
+                                <img src="{{ asset($admissionmasterreviw->image) }}" alt="">
                             </div>
 
-                            <h3 class="programmes_in__reviews__name">John Doe</h3>
-                            <h4 class="programmes_in__reviews__graduate">Выпускник 2017 года</h4>
+                            <h3 class="programmes_in__reviews__name">{{ $admissionmasterreviw->{'name_' . app()->getLocale()} }}</h3>
+                            <h4 class="programmes_in__reviews__graduate">{{ $admissionmasterreviw->{'graduate_' . app()->getLocale()} }}</h4>
                             <div class="programmes_in__reviews__text">
                                 <p>
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                    {!! $admissionmasterreviw->{'content_' . app()->getLocale()} !!}
                                 </p>
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="programmes_in__reviews__button">
+                    {{-- <div class="programmes_in__reviews__button">
                         <a href="#!" class="programmes_in__reviews__link">Подать заявку</a>
-                    </div>
-                </div> --}}
+                    </div> --}}
+                </div>
             </div>
         </section>
     </div>

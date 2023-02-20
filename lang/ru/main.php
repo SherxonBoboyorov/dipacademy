@@ -71,6 +71,7 @@ return [
     'category' => 'Категория',
     'share' => 'Поделиться',
     'similar_news' => 'Похожие новости',
-    'searching_results' => 'Результаты поиска'
+    'searching_results' => 'Результаты поиска',
+    'alumni_reviews' => 'Отзывы выпускников'
 
 ];
