@@ -59,7 +59,7 @@
                 <ul class="programmes__menu">
                   @foreach ($programmesins as $programmesin)
                     <li>
-                        <a href="{{ route('programmesin', $programmesin->{'slug_' . app()->getLocale()}) }}" class="programmes__menu__link">{{ $programmesin->{'title_' . app()->getLocale()} }}</a>
+                        <a href="{{ route('programmesin', $programmesin->id) }}" class="programmes__menu__link">{{ $programmesin->{'title_' . app()->getLocale()} }}</a>
                     </li>
                   @endforeach
                 </ul>

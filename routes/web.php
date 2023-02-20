@@ -122,7 +122,7 @@ Route::group(
         Route::get('departmentsStaffs/{slug}', [DepartmentsStaffController::class, 'show'])->name('departmentsStaff');
         Route::get('team/{slug}', [CommandController::class, 'team'])->name('team');
         Route::get('photogallerys', [PhotoGalleryController::class, 'list'])->name('photogallerys');
-        Route::get('photogallerys/{slug}', [PhotoGalleryController::class, 'show'])->name('photogallery');
+        Route::get('photogallerys/{id}', [PhotoGalleryController::class, 'show'])->name('photogallery');
         Route::get('videoGallery', [VideoGalleryController::class, 'videoGallery'])->name('videoGallery');
         Route::get('jobVacancy', [JobVacancyController::class, 'jobVacancy'])->name('jobVacancy');
         Route::get('E_reception', [EReceptionController::class, 'E_reception'])->name('E_reception');

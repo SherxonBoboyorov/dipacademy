@@ -32,7 +32,7 @@
                     @foreach ($photogallerys as $photogallery)
 
                     <div class="photoGallery__item">
-                        <a href="{{ route('photogallery', $photogallery->{'slug_' . app()->getLocale()}) }}">
+                        <a href="{{ route('photogallery', $photogallery->id) }}">
                             <div class="photoGallery__img">
                                 <img src="{{ asset($photogallery->image) }}" alt="photoGallery">
                                 <span><i class="fas fa-eye"></i></span>

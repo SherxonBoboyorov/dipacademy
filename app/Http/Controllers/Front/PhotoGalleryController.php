@@ -14,17 +14,16 @@ class PhotoGalleryController extends Controller
         return view('front.photogallery.list', compact('photogallerys'));
     }
 
-    public function show($slug)
+    public function show($id)
     {
-        $photogallery = Photo::where('slug_uz', $slug)
-        ->orWhere('slug_ru', $slug)
-        ->orWhere('slug_en', $slug)
-        ->first();
+        $photogallery = Photo::find($id);
 
         $photogallerys = Photo::orderBy('created_at', 'DESC')->get();
+        $photogallery = Photo::where('id', $id)->get();
         return view('front.photogallery.show', compact(
             'photogallery',
-            'photogallerys'
+            'photogallerys',
+            'id'
         ));
     }
 }

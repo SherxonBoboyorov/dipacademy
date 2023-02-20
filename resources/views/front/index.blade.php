@@ -94,7 +94,7 @@
                             </p>
                         </div>
 
-                        <a href="{{ route('programmesin', $programmesin->{'slug_' . app()->getLocale()}) }}" class="programmes_for__link">@lang('main.more') <span><i class="fas fa-chevron-right"></i></span></a>
+                        <a href="{{ route('programmesin', $programmesin->id) }}" class="programmes_for__link">@lang('main.more') <span><i class="fas fa-chevron-right"></i></span></a>
                     </div>
                     @endforeach
                 </div>
