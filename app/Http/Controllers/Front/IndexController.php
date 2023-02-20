@@ -9,7 +9,7 @@ use App\Models\ProgrammesIn;
 use App\Models\Magistracy;
 use App\Models\WhyDipAcademy;
 use App\Models\Article;
-use App\Models\Ourpartner;
+use App\Models\OurPartner;
 use App\Models\Category;
 use App\Models\ProgrammesMasterIn;
 use App\Models\Options;
@@ -27,7 +27,7 @@ class IndexController extends Controller
         $programmesins = ProgrammesIn::orderBy('created_at', 'DESC')->paginate(3);
         $magistracies = Magistracy::orderBy('created_at', 'DESC')->get();
         $whydipacademies = WhyDipAcademy::orderBy('created_at', 'DESC')->get();
-        $ourpartners = Ourpartner::orderBy('created_at', 'DESC')->get();
+        $ourpartners = OurPartner::orderBy('created_at', 'DESC')->get();
         $programmesmasterins = ProgrammesMasterIn::all();
         $options = Options::orderBy('created_at', 'DESC')->get();
 

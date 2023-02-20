@@ -7,13 +7,13 @@
     <div class="academy" style="background-image:url({{ asset('front/foto/academy_fon.png') }})">
         <section class="container">
             <div class="academy__cart">
-                <h2 class="academy__title__h2">@lang('main.video_gallery')</h2>
+                <h2 class="academy__title__h2">@lang('main.photo_gallery')</h2>
                 <ul class="academy__menu">
                     <li>
                         <a href="{{ route('/') }}" class="academy__menu__link">@lang('main.main')</a>
                     </li>
                     <li>
-                        <a class="academy__menu__link">@lang('main.video_gallery')</a>
+                        <a class="academy__menu__link">@lang('main.photo_gallery')</a>
                     </li>
                 </ul>
             </div>
@@ -48,7 +48,7 @@
 
 
                 {{ $photogallerys->links("vendor.pagination.pagination")}}
-                        
+
             </div>
         </section>
     </div>
