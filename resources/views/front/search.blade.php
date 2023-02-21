@@ -59,7 +59,6 @@
                 @endforeach
             </div>
 
-            {{-- {{ $articles->links("vendor.pagination.pagination")}} --}}
 
         </div>
     </section>
@@ -146,7 +145,7 @@
                             </p>
                         </div>
 
-                        <a href="{{ route('admissionin', $admissionin->{'slug_' . app()->getLocale()}) }}" class="programmes_for__link">@lang('main.more')<span><i class="fas fa-chevron-right"></i></span></a>
+                        <a href="{{ route('admissionin', $admissionin->id) }}" class="programmes_for__link">@lang('main.more')<span><i class="fas fa-chevron-right"></i></span></a>
                     </div>
                     @endforeach
                 </div>
@@ -202,7 +201,7 @@
                             </p>
                         </div>
 
-                        <a href="{{ route('programmesin', $programmesin->{'slug_' . app()->getLocale()}) }}" class="programmes_for__link">More <span><i class="fas fa-chevron-right"></i></span></a>
+                        <a href="{{ route('programmesin', $programmesin->id) }}" class="programmes_for__link">More <span><i class="fas fa-chevron-right"></i></span></a>
                     </div>
                     @endforeach
                 </div>
@@ -274,13 +273,5 @@
     </div>
 
     <!-- Tenders end -->
-
-
-
-
-
-
-
-
 
    @endsection

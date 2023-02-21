@@ -8,7 +8,7 @@ use App\Http\Requests\Admin\UpdateArticle;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\FIle;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 class ArticleController extends Controller
